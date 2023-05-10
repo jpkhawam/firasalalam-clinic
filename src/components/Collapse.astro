@@ -1,0 +1,13 @@
+---
+const { title, content } = Astro.props;
+---
+
+<div class="collapse-arrow rounded-box collapse my-2 bg-base-100">
+  <input type="checkbox" class="peer" />
+  <div class="collapse-title text-2xl font-medium">
+    {title}
+  </div>
+  <div class="collapse-content">
+    <p>{content}</p>
+  </div>
+</div>

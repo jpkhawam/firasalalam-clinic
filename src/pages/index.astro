@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Collapse from "../components/Collapse.astro";
 import { Image, Picture } from "@astrojs/image/components";
 ---
 
@@ -30,50 +31,25 @@ import { Image, Picture } from "@astrojs/image/components";
       </div>
     </div>
     <!---------- HERO ENDS HERE  ---------->
-
-    <div
-      tabindex="0"
-      class="collapse-arrow rounded-box collapse border border-base-300 bg-base-100"
-    >
-      <div class="collapse-title text-xl font-medium">
-        Focus me to see content
-      </div>
-      <div class="collapse-content">
-        <p>tabindex="0" attribute is necessary to make the div focusable</p>
-      </div>
-    </div>
-    <div
-      tabindex="0"
-      class="collapse-arrow rounded-box collapse border border-base-300 bg-base-100"
-    >
-      <div class="collapse-title text-xl font-medium">
-        Focus me to see content
-      </div>
-      <div class="collapse-content">
-        <p>tabindex="0" attribute is necessary to make the div focusable</p>
-      </div>
-    </div>
-    <div
-      tabindex="0"
-      class="collapse-arrow rounded-box collapse border border-base-300 bg-base-100"
-    >
-      <div class="collapse-title text-xl font-medium">
-        Focus me to see content
-      </div>
-      <div class="collapse-content">
-        <p>tabindex="0" attribute is necessary to make the div focusable</p>
-      </div>
-    </div>
-    <div
-      tabindex="0"
-      class="collapse-arrow rounded-box collapse border border-base-300 bg-base-100"
-    >
-      <div class="collapse-title text-xl font-medium">
-        Focus me to see content
-      </div>
-      <div class="collapse-content">
-        <p>tabindex="0" attribute is necessary to make the div focusable</p>
-      </div>
+    <div class="container justify-items-center py-10 lg:px-80">
+      <h2 class="pb-2 text-center text-xl">FAQ</h2>
+      <h2 class="pb-1 text-center text-4xl">Frequently Asked Questions</h2>
+      <Collapse
+        title="Do you prescribe medication?"
+        content="In illo sed omnis in. Saepe ut ut et eligendi id doloribus. Quo minima fugit nobis eos aliquam. Et dolor et alias necessitatibus corporis neque. Deleniti est earum ea dolor tempore et. Modi ipsa dicta tempore. Unde hic est pariatur minus quis expedita sapiente non. Velit corrupti consectetur voluptatem inventore eum quam voluptatibus. Amet itaque ipsam consequuntur. Minus ipsum mollitia esse. Optio quia nisi officia hic quas fuga. Nulla qui voluptas ut. Itaque accusamus repellat perferendis necessitatibus enim corrupti."
+      />
+      <Collapse
+        title="How long does therapy last?"
+        content="In illo sed omnis in. Saepe ut ut et eligendi id doloribus. Quo minima fugit nobis eos aliquam. Et dolor et alias necessitatibus corporis neque. Deleniti est earum ea dolor tempore et. Modi ipsa dicta tempore. Unde hic est pariatur minus quis expedita sapiente non. Velit corrupti consectetur voluptatem inventore eum quam voluptatibus. Amet itaque ipsam consequuntur. Minus ipsum mollitia esse. Optio quia nisi officia hic quas fuga. Nulla qui voluptas ut. Itaque accusamus repellat perferendis necessitatibus enim corrupti."
+      />
+      <Collapse
+        title="What can I expect to achieve in therapy?"
+        content="In illo sed omnis in. Saepe ut ut et eligendi id doloribus. Quo minima fugit nobis eos aliquam. Et dolor et alias necessitatibus corporis neque. Deleniti est earum ea dolor tempore et. Modi ipsa dicta tempore. Unde hic est pariatur minus quis expedita sapiente non. Velit corrupti consectetur voluptatem inventore eum quam voluptatibus. Amet itaque ipsam consequuntur. Minus ipsum mollitia esse. Optio quia nisi officia hic quas fuga. Nulla qui voluptas ut. Itaque accusamus repellat perferendis necessitatibus enim corrupti."
+      />
+      <Collapse
+        title="Why don't you accept insurance?"
+        content="In illo sed omnis in. Saepe ut ut et eligendi id doloribus. Quo minima fugit nobis eos aliquam. Et dolor et alias necessitatibus corporis neque. Deleniti est earum ea dolor tempore et. Modi ipsa dicta tempore. Unde hic est pariatur minus quis expedita sapiente non. Velit corrupti consectetur voluptatem inventore eum quam voluptatibus. Amet itaque ipsam consequuntur. Minus ipsum mollitia esse. Optio quia nisi officia hic quas fuga. Nulla qui voluptas ut. Itaque accusamus repellat perferendis necessitatibus enim corrupti."
+      />
     </div>
   </main>
 </Layout>
