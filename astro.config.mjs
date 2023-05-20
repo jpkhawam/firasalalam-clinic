@@ -6,11 +6,7 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: "https://firasalalam.com",
-  integrations: [
-    tailwind(),
-    image({
-      serviceEntryPoint: "@astrojs/image/sharp",
-    }),
-    sitemap(),
-  ],
+  integrations: [tailwind(), image({
+    serviceEntryPoint: "@astrojs/image/sharp"
+  }), sitemap()]
 });
