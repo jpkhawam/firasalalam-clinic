@@ -1,67 +1,45 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Collapse from "../components/Collapse.astro";
-import { Image, Picture } from "@astrojs/image/components";
+import ServiceCard from "../components/ServiceCard.astro";
+import Hero from "../components/Hero.astro";
+import FAQ from "../components/FAQ.astro";
+import Services from "../components/Services.astro";
+
+const services = [
+  {
+    icon: "fa-brain",
+    title: "Treatment",
+    content: [
+      "Something something here",
+      "Something something here",
+      "Something something here",
+    ],
+  },
+  {
+    icon: "fa-brain",
+    title: "Self-Improvement",
+    content: [
+      "Something something here",
+      "Something something here",
+      "Something something here",
+    ],
+  },
+  {
+    icon: "fa-brain",
+    title: "Specialty",
+    content: [
+      "Something something here",
+      "Something something here",
+      "Something something here",
+    ],
+  },
+];
 ---
 
 <Layout title="Firas Al Alam">
-  <main>
-    <!---------- DAISY UI HERO  ---------->
-    <div class="hero min-h-screen bg-base-200">
-      <div class="hero-content flex-col lg:flex-row-reverse">
-        <Picture
-          src="https://i.guim.co.uk/img/media/566c303b45612e76d0422d6b905ce685c9016a8f/0_0_1875_2500/master/1875.jpg?w=1200&q=55&auto=format&usm=12&fit=max&s=f59321a066fea0b5b463f25ccf78144b"
-          class="max-w-sm rounded-lg shadow-2xl"
-          widths={[400, 800, 1200]}
-          aspectRatio="2:3"
-          alt="TODO: alt text needs to go here"
-        />
-        <div>
-          <h1 class="mb-2 text-2xl font-semibold">
-            Looking for a psychologist?
-          </h1>
-          <h1 class="text-5xl font-bold">
-            You're in the right place- Let's talk today.
-          </h1>
-          <p class="py-6">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
-          </p>
-          <button class="btn-primary btn">Get Started</button>
-        </div>
-      </div>
-    </div>
-    <!---------- HERO ENDS HERE  ---------->
-
-    <!---------- SERVICES AND SPECIALTIES  ---------->
-    <div class="container justify-items-center py-10 lg:px-80">
-      <h2 class="pb-1 text-center text-4xl">Services and Specialties</h2>
-      
-    </div>
-    <!---------- SERVICES AND SPECIALTIES ENDS HERE  ---------->
-    
-    <!---------- FREQUENTLY ASKED QUESTIONS  ---------->
-    <div class="container justify-items-center py-10 lg:px-80">
-      <h2 class="pb-2 text-center text-xl">FAQ</h2>
-      <h2 class="pb-1 text-center text-4xl">Frequently Asked Questions</h2>
-      <Collapse
-        title="Do you prescribe medication?"
-        content="In illo sed omnis in. Saepe ut ut et eligendi id doloribus. Quo minima fugit nobis eos aliquam. Et dolor et alias necessitatibus corporis neque. Deleniti est earum ea dolor tempore et. Modi ipsa dicta tempore. Unde hic est pariatur minus quis expedita sapiente non. Velit corrupti consectetur voluptatem inventore eum quam voluptatibus. Amet itaque ipsam consequuntur. Minus ipsum mollitia esse. Optio quia nisi officia hic quas fuga. Nulla qui voluptas ut. Itaque accusamus repellat perferendis necessitatibus enim corrupti."
-      />
-      <Collapse
-        title="How long does therapy last?"
-        content="In illo sed omnis in. Saepe ut ut et eligendi id doloribus. Quo minima fugit nobis eos aliquam. Et dolor et alias necessitatibus corporis neque. Deleniti est earum ea dolor tempore et. Modi ipsa dicta tempore. Unde hic est pariatur minus quis expedita sapiente non. Velit corrupti consectetur voluptatem inventore eum quam voluptatibus. Amet itaque ipsam consequuntur. Minus ipsum mollitia esse. Optio quia nisi officia hic quas fuga. Nulla qui voluptas ut. Itaque accusamus repellat perferendis necessitatibus enim corrupti."
-      />
-      <Collapse
-        title="What can I expect to achieve in therapy?"
-        content="In illo sed omnis in. Saepe ut ut et eligendi id doloribus. Quo minima fugit nobis eos aliquam. Et dolor et alias necessitatibus corporis neque. Deleniti est earum ea dolor tempore et. Modi ipsa dicta tempore. Unde hic est pariatur minus quis expedita sapiente non. Velit corrupti consectetur voluptatem inventore eum quam voluptatibus. Amet itaque ipsam consequuntur. Minus ipsum mollitia esse. Optio quia nisi officia hic quas fuga. Nulla qui voluptas ut. Itaque accusamus repellat perferendis necessitatibus enim corrupti."
-      />
-      <Collapse
-        title="Why don't you accept insurance?"
-        content="In illo sed omnis in. Saepe ut ut et eligendi id doloribus. Quo minima fugit nobis eos aliquam. Et dolor et alias necessitatibus corporis neque. Deleniti est earum ea dolor tempore et. Modi ipsa dicta tempore. Unde hic est pariatur minus quis expedita sapiente non. Velit corrupti consectetur voluptatem inventore eum quam voluptatibus. Amet itaque ipsam consequuntur. Minus ipsum mollitia esse. Optio quia nisi officia hic quas fuga. Nulla qui voluptas ut. Itaque accusamus repellat perferendis necessitatibus enim corrupti."
-      />
-    </div>
-    <!---------- FREQUENTLY ASKED QUESTIONS ENDS HERE  ---------->
+  <main class="bg-base-200">
+    <Hero />
+    <Services />
+    <FAQ />
   </main>
 </Layout>
