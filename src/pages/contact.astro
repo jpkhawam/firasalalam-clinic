@@ -1,5 +1,274 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const inputClassList = [
+  "input-bordered",
+  "input",
+  "w-full",
+  "rounded-lg",
+  "border-gray-200",
+  "p-3",
+  "text-sm",
+];
+
+const adhdSymptomsMap = new Map<string, string>();
+adhdSymptomsMap.set(
+  "Inattention",
+  "Difficulty paying attention, staying focused, and sustaining concentration on tasks or activities, particularly those that are repetitive or less stimulating."
+);
+adhdSymptomsMap.set(
+  "Hyperactivity",
+  "Restlessness, excessive motor activity, and difficulty sitting still. Individuals with ADHD may often fidget, tap their feet, or have a constant need for movement."
+);
+adhdSymptomsMap.set(
+  "Impulsivity",
+  "Acting on immediate impulses without considering potential consequences. Impulsive behaviors can manifest as interrupting others, blurting out answers, or engaging in risky activities without thinking them through."
+);
+adhdSymptomsMap.set(
+  "Organization and Time Management",
+  "Challenges in organizing tasks, materials, and belongings. Difficulties with time management, planning, and prioritizing tasks can lead to inefficiency and difficulties meeting deadlines."
+);
+adhdSymptomsMap.set(
+  "Executive Functioning",
+  "Impairments in executive functions, which include skills such as problem-solving, decision-making, self-regulation, and working memory. Difficulties in these areas can affect academic performance, daily routines, and social interactions."
+);
+adhdSymptomsMap.set(
+  "Emotional Regulation",
+  "Difficulty regulating emotions and managing frustration, leading to mood swings, irritability, and a tendency to become easily overwhelmed or frustrated."
+);
+adhdSymptomsMap.set(
+  "Social Interactions",
+  "Challenges in social interactions, such as difficulties in taking turns, listening actively, or maintaining appropriate personal space. This can impact the development of friendships and relationships."
+);
+adhdSymptomsMap.set(
+  "Impaired Memory and Forgetfulness",
+  "Struggles with short-term memory and forgetfulness, which can affect remembering instructions, completing tasks, and recalling important information."
+);
+adhdSymptomsMap.set(
+  "Academic Underachievement",
+  "Difficulties in academic settings, including poor concentration during lectures, challenges with organization and completing assignments, and lower academic performance compared to peers."
+);
+
+const adhdSymptomsHTMLBlock = [];
+for (const [key, post] of adhdSymptomsMap) {
+    adhdSymptomsHTMLBlock.push(
+    `<label class="label cursor-pointer">` +
+      `
+        <div class="tooltip tooltip-accent text-start" data-tip="${post}">` +
+      `
+            <span class="label-text pe-5 ">${key}</span>` +
+      `
+        </div>` +
+      `
+        <input type="checkbox" checked="checked" class="checkbox" name=${key}/> ` +
+      `
+    </label>`
+  );
+}
 ---
 
-<Layout title="Firas Al Alam | Contact" />
+<Layout title="Firas Al Alam | Contact">
+  <section
+    class="bg-gradient-to-b from-base-200 to-base-300"
+    data-theme="fantasy"
+  >
+    <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
+        <div class="lg:col-span-2 lg:py-12">
+          <p class="max-w-xl">
+            <p class="pb-2 text-lg">
+              You can contact me directly through various means. If you prefer a
+              traditional approach, feel free to give me a call at [phone
+              number]. The best time to contact me is Monday-Friday from 9am til
+              5pm.
+            </p>
+            <p class="pb-2 text-lg">
+              Alternatively, you can reach out to me via email at [email
+              address], or via Telegram or Whatsapp at +961 xx xxxxxx.
+            </p>
+            <p class="pb-2 text-lg">
+              If you prefer a more structured approach, I have also provided a
+              contact form on this page. You can fill out the form with your
+              details, including your preferred method of contact, and a brief
+              description of your concerns. Once submitted, the form will be
+              sent directly to me.
+            </p>
+          </p>
+
+          <div class="mt-8">
+            <a href="" class="text-2xl font-bold text-pink-600">
+              0151 475 4450
+            </a>
+
+            <address class="mt-2 not-italic">
+              282 Kevin Brook, Imogeneborough, CA 58517
+            </address>
+          </div>
+        </div>
+
+        <div
+          class="rounded-lg bg-white p-8 text-black shadow-lg lg:col-span-3 lg:p-12"
+        >
+          <form
+            action="https://formsubmit.co/1b7806c7f0151399481f22792447a388"
+            method="POST"
+            class="space-y-4"
+          >
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div>
+                <label class="label">
+                  <span class="label-text text-black">First Name</span>
+                </label>
+                <input
+                  class:list={inputClassList}
+                  placeholder="First Name"
+                  type="text"
+                  id="firstName"
+                  name="First Name"
+                />
+              </div>
+              <div>
+                <label class="label">
+                  <span class="label-text text-black">Last Name</span>
+                </label>
+                <input
+                  class:list={inputClassList}
+                  placeholder="Last Name"
+                  type="text"
+                  id="lastName"
+                  name="Last Name"
+                />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div>
+                <label class="label">
+                  <span class="label-text text-black">Email Address</span>
+                </label>
+                <input
+                  class:list={inputClassList}
+                  placeholder="Email address"
+                  type="email"
+                  id="email"
+                  name="email"
+                />
+              </div>
+
+              <div>
+                <label class="label">
+                  <span class="label-text text-black">Phone Number</span>
+                </label>
+                <input
+                  class:list={inputClassList}
+                  placeholder="Phone Number"
+                  type="tel"
+                  name="phone"
+                  id="phone"
+                />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div>
+                <label class="label">
+                  <span class="label-text">Preferred communication method</span>
+                </label>
+                <select
+                  class="select-primary select w-72 max-w-6xl"
+                  name="Preffered communication method"
+                >
+                  <option disabled selected
+                    >Preferred Communication Method</option
+                  >
+                  <option>Phone</option>
+                  <option>Email</option>
+                  <option>Telegram</option>
+                  <option>Whatsapp</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="label">
+                  <span class="label-text text-black"
+                    >Best time to contact you</span
+                  >
+                </label>
+                <input
+                  class:list={inputClassList}
+                  placeholder="Best time to contact you"
+                  type="text"
+                  name="Best time to contact"
+                  id="bestTimeToContact"
+                />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div>
+                <label class="label">
+                  <span class="label-text text-black">Gender (Optional)</span>
+                </label>
+                <select
+                  class="select-primary select w-72 max-w-6xl"
+                  name="Preffered communication method"
+                >
+                  <option disabled selected>Your Gender</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                  <option>Non-Binary</option>
+                  <option>Transgender</option>
+                  <option>Other</option>
+                  <option>Prefer not to say</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="label">
+                  <span class="label-text text-black">Age (Optional)</span>
+                </label>
+                <input
+                  class:list={inputClassList}
+                  placeholder="Your age"
+                  type="text"
+                  name="Age"
+                  id="age"
+                />
+              </div>
+            </div>
+
+            <div>
+              <div class="form-control">
+                <h4 class="pb-2">
+                  What are your main concerns? You can select all that apply
+                </h4>
+                <div
+                  class="grid grid-cols-1 gap-4 sm:grid-cols-3"
+                  set:html={adhdSymptomsHTMLBlock}
+                />
+              </div>
+            </div>
+
+            <div>
+              <label class="sr-only" for="message">Message</label>
+              <textarea
+                class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                placeholder="Message"
+                rows="8"
+                name="message"
+                id="message"></textarea>
+            </div>
+            <div class="mt-4">
+              <button
+                type="submit"
+                class="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
