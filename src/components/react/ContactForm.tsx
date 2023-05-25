@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 export default function ContactForm() {
+  const [selectedPerson, setSelectedPerson] = useState("none");
   const [selectedCommunicationMethod, setSelectedCommunicationMethod] =
     useState("none");
   const inputClassList =
@@ -12,6 +13,56 @@ export default function ContactForm() {
       method="POST"
       className="space-y-4"
     >
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div>
+          <label className="label">
+            <span className="label-text text-black">I am here for</span>
+          </label>
+          <select
+            className="select-primary select w-72 max-w-6xl border-opacity-20 font-normal"
+            name="I am here for"
+            value={selectedPerson}
+            onChange={(e) => {
+              setSelectedPerson(e.target.value);
+            }}
+          >
+            <option disabled={true} value="none">
+              I am here for
+            </option>
+            <option value="Myself">Myself</option>
+            <option value="Someone else">Someone else</option>
+          </select>
+        </div>
+
+        {selectedPerson === "Someone else" && (
+          <div>
+            <label className="label">
+              <span className="label-text text-black">
+                What is your relationship to that person?
+              </span>
+            </label>
+            <input
+              className={inputClassList}
+              placeholder="Specify relationship to that person"
+              type="text"
+              id="lastName"
+              name="Last Name"
+            />
+          </div>
+        )}
+      </div>
+
+      {selectedPerson === "Someone else" && (
+        <>
+          <div className="divider" />
+          <div>
+            {" "}
+            Please fill this section with{" "}
+            <span className="underline"> your personal information.</span>{" "}
+          </div>
+        </>
+      )}
+
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div>
           <label className="label">
@@ -38,7 +89,6 @@ export default function ContactForm() {
           />
         </div>
       </div>
-
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div>
           <label className="label">
@@ -78,7 +128,6 @@ export default function ContactForm() {
             value={selectedCommunicationMethod}
             onChange={(e) => {
               setSelectedCommunicationMethod(e.target.value);
-              console.log(e.target.value);
             }}
           >
             <option disabled={true} value="none">
@@ -109,17 +158,82 @@ export default function ContactForm() {
         )}
       </div>
 
+      {selectedPerson === "Someone else" && (
+        <>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div>
+              <label className="label">
+                <span className="label-text text-black">Gender</span>
+              </label>
+              <select
+                className="select-primary select w-72 max-w-6xl border-opacity-20 font-normal"
+                name="Gender of person contacting you"
+                defaultValue={0}
+              >
+                <option disabled={true}>Your Gender</option>
+                <option>Man</option>
+                <option>Woman</option>
+                <option>Non-Binary</option>
+                <option>Transgender</option>
+                <option>Other</option>
+                <option>Prefer not to say</option>
+              </select>
+            </div>
+          </div>
+          <div className="divider" />
+          <div>
+            {" "}
+            Please fill this section with the information of{" "}
+            <span className="underline">the person you are here for.</span>
+          </div>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div>
+              <label className="label">
+                <span className="label-text text-black">First Name</span>
+              </label>
+              <input
+                className={inputClassList}
+                placeholder="First Name"
+                type="text"
+                id="firstNameOtherPerson"
+                name="First Name of person I am here for"
+              />
+            </div>
+            <div>
+              <label className="label">
+                <span className="label-text text-black">Last Name</span>
+              </label>
+              <input
+                className={inputClassList}
+                placeholder="Last Name"
+                type="text"
+                id="lastNameOtherPerson"
+                name="Last Name of person I am here for"
+              />
+            </div>
+          </div>
+        </>
+      )}
+
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div>
           <label className="label">
-            <span className="label-text text-black">Gender (Optional)</span>
+            <span className="label-text text-black">Gender</span>
           </label>
           <select
             className="select-primary select w-72 max-w-6xl border-opacity-20 font-normal"
-            name="Preffered communication method"
+            name={
+              selectedPerson === "Someone else"
+                ? "Gender of other person"
+                : "Gender"
+            }
             defaultValue={0}
           >
-            <option disabled={true}>Your Gender</option>
+            <option disabled={true}>
+              {selectedPerson === "Someone else"
+                ? "Person's Gender"
+                : "Your Gender"}
+            </option>
             <option>Man</option>
             <option>Woman</option>
             <option>Non-Binary</option>
@@ -131,13 +245,17 @@ export default function ContactForm() {
 
         <div>
           <label className="label">
-            <span className="label-text text-black">Age (Optional)</span>
+            <span className="label-text text-black">Age</span>
           </label>
           <input
             className={inputClassList}
-            placeholder="Your age"
+            placeholder={
+              selectedPerson === "Someone else" ? "Person's Age" : "Age"
+            }
             type="text"
-            name="Age"
+            name={
+              selectedPerson === "Someone else" ? "Other Person's Age" : "Age"
+            }
             id="age"
           />
         </div>
@@ -157,12 +275,14 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label className="sr-only" htmlFor="message">
-            Message
+          <label className="label">
+            <span className="label-text text-black">
+              Additional notes (Optional)
+            </span>
           </label>
           <textarea
             className="w-full rounded-lg border-gray-200 p-3 text-sm"
-            placeholder="Message"
+            placeholder="You can add additional notes that you think I should know about here."
             rows={8}
             name="message"
             id="message"
