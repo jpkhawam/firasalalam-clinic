@@ -266,7 +266,9 @@ export default function ContactForm() {
             }
             type="text"
             name={
-              selectedPerson === "Someone else" ? "Age of person I am here for" : "Age"
+              selectedPerson === "Someone else"
+                ? "Age of person I am here for"
+                : "Age"
             }
             id="age"
           />
@@ -275,7 +277,11 @@ export default function ContactForm() {
 
       <div>
         <div className="form-control">
-        <input type="hidden" name="My main concerns are:" value="-----------" />
+          <input
+            type="hidden"
+            name="My main concerns are:"
+            value="-----------"
+          />
           <h4 className="pb-2">
             What are your main concerns? You can select all that apply
           </h4>
