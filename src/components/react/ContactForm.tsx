@@ -13,6 +13,18 @@ export default function ContactForm() {
       method="POST"
       className="space-y-4"
     >
+      <input
+        type="hidden"
+        name="_next"
+        value="https://firasalalam.clinic/thanks"
+      />
+      <input
+        type="hidden"
+        name="_subject"
+        value="New submission on firasalalam.clinic"
+      />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="text" name="_honey" style={{ display: "none" }} />
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div>
           <label className="label">
@@ -224,7 +236,7 @@ export default function ContactForm() {
             className="select-primary select w-72 max-w-6xl border-opacity-20 font-normal"
             name={
               selectedPerson === "Someone else"
-                ? "Gender of other person"
+                ? "Gender of person I am here for"
                 : "Gender"
             }
             defaultValue={0}
@@ -254,7 +266,7 @@ export default function ContactForm() {
             }
             type="text"
             name={
-              selectedPerson === "Someone else" ? "Other Person's Age" : "Age"
+              selectedPerson === "Someone else" ? "Age of person I am here for" : "Age"
             }
             id="age"
           />
@@ -263,6 +275,7 @@ export default function ContactForm() {
 
       <div>
         <div className="form-control">
+        <input type="hidden" name="My main concerns are:" value="-----------" />
           <h4 className="pb-2">
             What are your main concerns? You can select all that apply
           </h4>
@@ -272,6 +285,7 @@ export default function ContactForm() {
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
             {getAdhdSymptomsHTMLBlock()}
           </div>
+          <input type="hidden" name="--------------" value="-----------" />
         </div>
 
         <div>
@@ -325,6 +339,7 @@ function getAdhdSymptomsHTMLBlock(): JSX.Element[] {
 
   const adhdSymptomsBlock: JSX.Element[] = [];
 
+  // TODO: these need a tooltip for mobile view
   Object.entries(adhdSymptomsMap).forEach(([symptom, desc]) => {
     adhdSymptomsBlock.push(
       <label className="label cursor-pointer" key={symptom}>
