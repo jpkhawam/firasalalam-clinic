@@ -10,7 +10,30 @@ import NeoBrutalistButton from "./NeoBrutalistButton.astro";
     </div>
     <div class="navbar-end me-3">
       <LangChange />
-      <NeoBrutalistButton title="Get Started" link="/contact/" />
+      <a
+        href="/contact/"
+        class="group relative inline-block focus:outline-none focus:ring dark:hidden"
+      >
+        <span
+          class="inset-0 inline-block border-2 border-black bg-black px-8 py-3 text-sm font-bold uppercase tracking-widest text-white transition-transform group-hover:bg-cream group-hover:text-black"
+        >
+          Get Started
+        </span>
+      </a>
+      <a
+        href="/contact/"
+        class="group relative hidden rounded focus:outline-none focus:ring dark:inline-block"
+      >
+        <span
+          class="absolute inset-0 translate-x-1 translate-y-0.5 rounded-full bg-brand transition-transform"
+        ></span>
+
+        <span
+          class="relative inline-block rounded-full border-2 border-brand bg-base-200 px-8 py-3 text-center text-sm font-bold uppercase tracking-widest text-brand group-hover:translate-x-1 group-hover:translate-y-0.5 group-active:text-opacity-75"
+        >
+          Get Started
+        </span>
+      </a>
     </div>
   </div>
 </nav>
