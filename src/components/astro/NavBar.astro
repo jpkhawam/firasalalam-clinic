@@ -6,13 +6,48 @@ import NeoBrutalistButton from "./NeoBrutalistButton.astro";
 <nav>
   <div class="navbar bg-cream dark:bg-base-200">
     <div class="navbar-start">
+      <div class="dropdown">
+        <label tabindex="0" class="btn-ghost btn-circle btn">
+          <svg
+            width="35"
+            height="35"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            transform="matrix(1, 0, 0, -1, 0, 0)"
+            ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+              <g id="Menu / Menu_Alt_04">
+                <path
+                  id="Vector"
+                  d="M5 17H19M5 12H19M5 7H13"
+                  stroke="currentColor"
+                  stroke-width="0.96"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </g>
+            </g></svg
+          >
+        </label>
+        <ul
+          tabindex="0"
+          class="dropdown-content menu rounded-box menu-compact mt-3 w-52 bg-base-100 p-2 shadow"
+        >
+          <li><a>Homepage</a></li>
+          <li><a>Contact</a></li>
+          <li><a>Certificates</a></li>
+          <li><a>About me</a></li>
+        </ul>
+      </div>
       <a href="/" class="btn-ghost btn text-3xl normal-case">Firas Al Alam</a>
     </div>
     <div class="navbar-end me-3">
       <LangChange />
       <a
         href="/contact/"
-        class="group relative inline-block focus:outline-none focus:ring dark:hidden"
+        class="group relative hidden focus:outline-none focus:ring dark:hidden md:inline-block"
       >
         <span
           class="inset-0 inline-block border-2 border-black bg-black px-8 py-3 text-sm font-bold uppercase tracking-widest text-white transition-transform group-hover:bg-cream group-hover:text-black"
