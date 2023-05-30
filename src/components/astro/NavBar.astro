@@ -1,10 +1,9 @@
 ---
 import LangChange from "./LangChange.astro";
-import NeoBrutalistButton from "./NeoBrutalistButton.astro";
 ---
 
 <nav>
-  <div class="navbar bg-cream dark:bg-base-200">
+  <div class="navbar w-screen bg-cream dark:bg-[#3A3F4C]">
     <div class="navbar-start">
       <div class="dropdown">
         <label tabindex="0" class="btn-ghost btn-circle btn">
@@ -33,7 +32,7 @@ import NeoBrutalistButton from "./NeoBrutalistButton.astro";
         </label>
         <ul
           tabindex="0"
-          class="dropdown-content menu rounded-box menu-compact mt-3 w-52 bg-base-100 p-2 shadow"
+          class="dropdown-content menu rounded-box menu-compact mt-3 w-52 p-2 font-semibold shadow dark:bg-[#2F3440]"
         >
           <li><a>Homepage</a></li>
           <li><a>Contact</a></li>
@@ -47,7 +46,7 @@ import NeoBrutalistButton from "./NeoBrutalistButton.astro";
       <LangChange />
       <a
         href="/contact/"
-        class="group relative hidden focus:outline-none focus:ring dark:hidden md:inline-block"
+        class="group relative hidden focus:outline-none focus:ring dark:hidden md:inline-block md:dark:hidden"
       >
         <span
           class="inset-0 inline-block border-2 border-black bg-black px-8 py-3 text-sm font-bold uppercase tracking-widest text-white transition-transform group-hover:bg-cream group-hover:text-black"
@@ -64,7 +63,7 @@ import NeoBrutalistButton from "./NeoBrutalistButton.astro";
         ></span>
 
         <span
-          class="relative inline-block rounded-full border-2 border-brand bg-base-200 px-8 py-3 text-center text-sm font-bold uppercase tracking-widest text-brand group-hover:translate-x-1 group-hover:translate-y-0.5 group-active:text-opacity-75"
+          class="relative inline-block rounded-full border-2 border-brand bg-[#3A3F4C] px-8 py-3 text-center text-sm font-bold uppercase tracking-widest text-brand group-hover:translate-x-1 group-hover:translate-y-0.5 group-active:text-opacity-75"
         >
           Get Started
         </span>

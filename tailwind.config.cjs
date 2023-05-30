@@ -10,13 +10,17 @@ module.exports = {
         sans: ["Inter var", ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        'brand' : '#FFAA88',
-        'cream': '#EEE',
-        'cream-content': '#002938',
+        brand: "#FFAA88",
+        cream: "#EEE",
+        "cream-content": "#002938",
       },
     },
   },
-  plugins: [require("@tailwindcss/typography"), require('@tailwindcss/forms'), require("daisyui")],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/forms"),
+    require("daisyui"),
+  ],
   daisyui: {
     themes: ["fantasy", "dark"],
     logs: false,
