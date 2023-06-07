@@ -1,5 +1,5 @@
 ---
-const card_class_list = [
+const card = [
   "flex",
   "flex-col",
   "group",
@@ -18,7 +18,19 @@ const card_class_list = [
   "xl:h-[575px]",
   "xl:w-[395px]",
 ];
-const card_header_text_class_list = [
+const cardBorder = [
+  "absolute",
+  "inset-0",
+  "translate-x-2",
+  "translate-y-2",
+  "bg-gray-500",
+  "opacity-25",
+  "transition-transform",
+  "duration-700",
+  "group-hover:scale-105",
+  "dark:hidden",
+];
+const cardHeaderText = [
   "mb-3",
   "me-6",
   "ms-8",
@@ -30,7 +42,7 @@ const card_header_text_class_list = [
   "[line-height:2.2rem]",
   "dark:text-black",
 ];
-const card_learn_more_class_list = [
+const cardLearnMore = [
   "ms-8",
   "text-start",
   "font-sans",
@@ -39,7 +51,7 @@ const card_learn_more_class_list = [
   "[font-size:1.00rem]",
   "dark:text-black",
 ];
-const card_svg_class_list = [
+const cardSvg = [
   "mx-5",
   "transition-transform",
   "duration-1000",
@@ -48,7 +60,7 @@ const card_svg_class_list = [
   "max-h-1/2",
   "mt-auto",
 ];
-const modal_button_class_list = [
+const modalButton = [
   "btn-ghost",
   "btn-sm",
   "btn-circle",
@@ -58,11 +70,16 @@ const modal_button_class_list = [
   "top-3",
   "text-2xl",
 ];
-const modal_form_class_list = [
+const modalBox = [
   "modal-box",
-  "w-11/12",
-  "max-w-[70vw]",
-  "h-[90vh]",
+  "w-screen",
+  "h-screen",
+  "max-h-screen",
+  "sm:w-11/12",
+  "rounded-none",
+  "sm:rounded-2xl",
+  "sm:max-w-[70vw]",
+  "sm:h-[90vh]",
 ];
 ---
 
@@ -85,77 +102,79 @@ const modal_form_class_list = [
     >
   </div>
   <div
-    class="ml-auto mr-auto grid grid-cols-1 justify-items-center gap-x-[100px] gap-y-10 px-20 py-10 dark:bg-[#1B1E26] lg:grid-cols-3 2xl:px-52"
+    class="mx-5 ml-auto mr-auto grid grid-cols-1 justify-items-center gap-x-[100px] gap-y-10 px-5 py-10 dark:bg-[#1B1E26] lg:grid-cols-3 lg:px-20 2xl:px-52"
   >
-    <div
-      class:list={card_class_list}
-      onclick="service_card_modal_1.showModal()"
-    >
-      <div class="mb-5">
-        <h2 class:list={card_header_text_class_list}>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae
-          unde pariatur.
-        </h2>
-        <span class:list={card_learn_more_class_list}>Learn more</span>
-      </div>
-      <div class:list={card_svg_class_list}>
-        <object
-          aria-hidden="true"
-          data="/test.svg"
-          type="image/svg+xml"
-          style="opacity: 1; transform: none;"></object>
-      </div>
-    </div>
-
-    <div
-      class:list={card_class_list}
-      onclick="service_card_modal_2.showModal()"
-    >
-      <div class="mb-5">
-        <h2 class:list={card_header_text_class_list}>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae
-          unde pariatur eveniet non veniam eius molestiae ratione libero.
-        </h2>
-        <span class:list={card_learn_more_class_list}>Learn more</span>
-      </div>
-      <div
-        class:list={card_svg_class_list}
-        onclick="service_card_modal_1.showModal()"
-      >
-        <object
-          aria-hidden="true"
-          data="/test.svg"
-          type="image/svg+xml"
-          style="opacity: 1; transform: none;"></object>
+    <div class="group relative">
+      <div class:list={cardBorder} aria-hidden="true"></div>
+      <div class="relative">
+        <div class:list={card} onclick="service_card_modal_1.showModal()">
+          <div class="mb-5">
+            <h2 class:list={cardHeaderText}>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Recusandae unde pariatur.
+            </h2>
+            <span class:list={cardLearnMore}>Learn more</span>
+          </div>
+          <div class:list={cardSvg}>
+            <object
+              aria-hidden="true"
+              data="/test.svg"
+              type="image/svg+xml"
+              style="opacity: 1; transform: none;"></object>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div
-      class:list={card_class_list}
-      onclick="service_card_modal_3.showModal()"
-    >
-      <div class="mb-5">
-        <h2 class:list={card_header_text_class_list}>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-        </h2>
-        <span class:list={card_learn_more_class_list}>Learn more</span>
+    <div class="group relative">
+      <div class:list={cardBorder} aria-hidden="true"></div>
+      <div class="relative">
+        <div class:list={card} onclick="service_card_modal_2.showModal()">
+          <div class="mb-5">
+            <h2 class:list={cardHeaderText}>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Recusandae unde pariatur eveniet non veniam eius molestiae ratione
+              libero.
+            </h2>
+            <span class:list={cardLearnMore}>Learn more</span>
+          </div>
+          <div class:list={cardSvg}>
+            <object
+              aria-hidden="true"
+              data="/test.svg"
+              type="image/svg+xml"
+              style="opacity: 1; transform: none;"></object>
+          </div>
+        </div>
       </div>
-      <div class:list={card_svg_class_list}>
-        <object
-          aria-hidden="true"
-          data="/test.svg"
-          type="image/svg+xml"
-          style="opacity: 1; transform: none;"></object>
+    </div>
+
+    <div class="group relative">
+      <div class:list={cardBorder} aria-hidden="true"></div>
+      <div class="relative">
+        <div class:list={card} onclick="service_card_modal_3.showModal()">
+          <div class="mb-5">
+            <h2 class:list={cardHeaderText}>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            </h2>
+            <span class:list={cardLearnMore}>Learn more</span>
+          </div>
+          <div class:list={cardSvg}>
+            <object
+              aria-hidden="true"
+              data="/test.svg"
+              type="image/svg+xml"
+              style="opacity: 1; transform: none;"></object>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
 <dialog id="service_card_modal_1" class="modal">
-  <form method="dialog" class:list={modal_form_class_list}>
-    <button for="service_card_modal_1" class:list={modal_button_class_list}
-      >✕</button
-    >
+  <form method="dialog" class:list={modalBox}>
+    <button class:list={modalButton}>✕</button>
     <h3 class="text-lg font-bold">Hello! 1</h3>
     <p class="py-4">Press ESC key or click outside to close</p>
   </form>
@@ -165,10 +184,8 @@ const modal_form_class_list = [
 </dialog>
 
 <dialog id="service_card_modal_2" class="modal">
-  <form method="dialog" class:list={modal_form_class_list}>
-    <button for="service_card_modal_2" class:list={modal_button_class_list}
-      >✕</button
-    >
+  <form method="dialog" class:list={modalBox}>
+    <button class:list={modalButton}>✕</button>
     <h3 class="text-lg font-bold">Hello! 2</h3>
     <p class="py-4">Press ESC key or click outside to close</p>
   </form>
@@ -178,10 +195,8 @@ const modal_form_class_list = [
 </dialog>
 
 <dialog id="service_card_modal_3" class="modal">
-  <form method="dialog" class:list={modal_form_class_list}>
-    <button for="service_card_modal_3" class:list={modal_button_class_list}
-      >✕</button
-    >
+  <form method="dialog" class:list={modalBox}>
+    <button class:list={modalButton}>✕</button>
     <h3 class="text-lg font-bold">Hello! 3</h3>
     <p class="py-4">Press ESC key or click outside to close</p>
   </form>
