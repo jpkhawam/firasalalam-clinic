@@ -23,8 +23,22 @@ const { title } = Astro.props;
   <body
     class="flex h-screen w-fit flex-col justify-between selection:bg-gray-950 selection:text-white dark:text-slate-50 selection:dark:bg-brand selection:dark:text-black"
   >
-    <NavBar />
-    <slot />
-    <Footer />
+    <div class="drawer drawer-end">
+      <input id="navigation-drawer" type="checkbox" class="drawer-toggle" />
+      <div class="drawer-content">
+        <NavBar />
+        <slot />
+        <Footer />
+      </div>
+      <div class="drawer-side">
+        <label for="navigation-drawer" class="drawer-overlay"></label>
+        <ul
+          class="menu h-full w-screen bg-white p-4 text-base-content dark:bg-[#000213] md:w-[25rem]"
+        >
+          <li><a>Sidebar Item 1</a></li>
+          <li><a>Sidebar Item 2</a></li>
+        </ul>
+      </div>
+    </div>
   </body>
 </html>
