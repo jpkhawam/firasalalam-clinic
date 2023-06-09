@@ -5,7 +5,7 @@ export default function ContactForm() {
   const [selectedCommunicationMethod, setSelectedCommunicationMethod] =
     useState("none");
   const inputClassList =
-    "input-bordered input w-full rounded-lg border-gray-200 p-3 text-sm";
+    "input-bordered input w-full rounded-lg border-gray-200 p-3 text-sm focus:ring-0 focus:ring-offset-0 focus:outline-none";
 
   return (
     <form
@@ -31,7 +31,7 @@ export default function ContactForm() {
             <span className="label-text text-black">I am here for</span>
           </label>
           <select
-            className="select-primary select w-72 max-w-6xl border-opacity-20 font-normal"
+            className="select-primary select w-72 max-w-6xl border-opacity-20 font-normal focus:ring-0 focus:ring-offset-0 focus:outline-none"
             name="I am here for"
             value={selectedPerson}
             onChange={(e) => {
@@ -135,7 +135,7 @@ export default function ContactForm() {
             <span className="label-text">Preferred communication method</span>
           </label>
           <select
-            className="select-primary select w-72 max-w-6xl border-opacity-20 font-normal"
+            className="select-primary select w-72 max-w-6xl border-opacity-20 font-normal focus:ring-0 focus:ring-offset-0 focus:outline-none"
             name="Preffered communication method"
             value={selectedCommunicationMethod}
             onChange={(e) => {
@@ -178,7 +178,7 @@ export default function ContactForm() {
                 <span className="label-text text-black">Gender</span>
               </label>
               <select
-                className="select-primary select w-72 max-w-6xl border-opacity-20 font-normal"
+                className="select-primary select w-72 max-w-6xl border-opacity-20 font-normal focus:ring-0 focus:ring-offset-0 focus:outline-none"
                 name="Gender of person contacting you"
                 defaultValue={0}
               >
@@ -233,7 +233,7 @@ export default function ContactForm() {
             <span className="label-text text-black">Gender</span>
           </label>
           <select
-            className="select-primary select w-72 max-w-6xl border-opacity-20 font-normal"
+            className="select-primary select w-72 max-w-6xl border-opacity-20 font-normal focus:ring-0 focus:ring-offset-0 focus:outline-none"
             name={
               selectedPerson === "Someone else"
                 ? "Gender of person I am here for"
@@ -309,12 +309,16 @@ export default function ContactForm() {
           />
         </div>
         <div className="mt-4">
-          <button
-            type="submit"
-            className="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto"
-          >
-            Submit
-          </button>
+        <button
+        className="group relative me-12"
+        type="submit"
+      >
+        <span
+          className="inset-0 inline-block border-2 border-black bg-black px-8 py-3 text-sm font-bold uppercase tracking-widest text-white transition-transform group-hover:bg-cream group-hover:text-black"
+        >
+          Submit
+        </span>
+      </button>
         </div>
       </div>
     </form>
@@ -361,7 +365,7 @@ function getAdhdSymptomsHTMLBlock(): JSX.Element[] {
         >
           <span className="label-text pe-5 font-semibold">{symptom}</span>
         </div>
-        <input type="checkbox" className="checkbox" name={symptom} />
+        <input type="checkbox" className="checkbox focus:ring-0 focus:ring-offset-0 focus:outline-none" name={symptom} />
       </label>
     );
   });
