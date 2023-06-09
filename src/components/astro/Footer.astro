@@ -7,23 +7,32 @@
   </div>
   <div>
     <span class="footer-title">Navigation</span>
-    <a class="link-hover link">Home page</a>
-    <a class="link-hover link">Certificates</a>
-    <a class="link-hover link">Contact</a>
-    <a class="link-hover link">About Me</a>
+    <a href="/" class="link-hover link">Home page</a>
+    <a href="/certificates" class="link-hover link">Certificates</a>
+    <a href="/contact" class="link-hover link">Contact</a>
+    <a href="/about" class="link-hover link">About Me</a>
   </div>
   <div>
     <span class="footer-title">Contact</span>
+    <!-- TODO: add phone number -->
     <a class="link-hover link">Phone</a>
-    <a class="link-hover link">Email</a>
+    <a href="mailto:contact@firasalalam.clinic" class="link-hover link">Email</a>
+    <!-- TODO: add Telegram and whatsapp -->
     <a class="link-hover link">Telegram</a>
     <a class="link-hover link">Whatsapp</a>
   </div>
   <div>
     <span class="footer-title">Legal</span>
+    <!-- TODO: add work permit -->
     <a class="link-hover link">Work Permit</a>
     <div
-      class="tooltip-accent tooltip"
+      class="tooltip "
+      style={
+        {
+          "--tooltip-color": "#dfdfdf",
+          "--tooltip-text-color": "#000",
+        }
+      }
       data-tip="This website is licensed under the GPL-3.0 license"
     >
       <a
