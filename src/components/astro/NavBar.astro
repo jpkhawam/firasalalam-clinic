@@ -4,14 +4,14 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
 ---
 
 <nav>
-  <div class="navbar w-screen bg-cream px-5 py-5 dark:bg-[#363B47]">
+  <div class="navbar bg-cream px-5 py-5 dark:bg-[#363B47]">
     <div class="navbar-start">
       <a href="/" class="btn-ghost btn text-3xl normal-case">Firas Al Alam</a>
     </div>
     <div class="navbar-end me-3">
       <a
         href="/contact/"
-        class="group relative me-12 hidden focus:outline-none focus:ring dark:hidden lg:inline-block lg:dark:hidden"
+        class="group relative me-12 hidden dark:hidden lg:inline-block lg:dark:hidden"
       >
         <span
           class="inset-0 inline-block border-2 border-black bg-black px-8 py-3 text-sm font-bold uppercase tracking-widest text-white transition-transform group-hover:bg-cream group-hover:text-black"
@@ -21,7 +21,7 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
       </a>
       <a
         href="/contact/"
-        class="group relative me-12 hidden rounded focus:outline-none focus:ring lg:dark:inline-block"
+        class="group relative me-12 hidden rounded lg:dark:inline-block"
       >
         <span
           class="absolute inset-0 translate-x-1 translate-y-0.5 rounded-full bg-brand transition-transform"
