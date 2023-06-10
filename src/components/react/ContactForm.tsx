@@ -9,7 +9,7 @@ export default function ContactForm() {
 
   return (
     <form
-      action="https://formsubmit.co/1b7806c7f0151399481f22792447a388"
+      action="https://formsubmit.co/contact@firasalalam.clinic"
       method="POST"
       className="space-y-4"
     >
@@ -314,7 +314,7 @@ export default function ContactForm() {
         type="submit"
       >
         <span
-          className="inset-0 inline-block border-2 border-black bg-black px-8 py-3 text-sm font-bold uppercase tracking-widest text-white transition-transform group-hover:bg-cream group-hover:text-black"
+          className="inset-0 inline-block border-2 border-black bg-black px-8 py-3 text-sm font-bold uppercase tracking-widest text-white transition-transform group-hover:bg-white group-hover:text-black"
         >
           Submit
         </span>
