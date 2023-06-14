@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function ContactForm() {
-  const [selectedPerson, setSelectedPerson] = useState("none");
+  const [selectedPerson, setSelectedPerson] = useState("Myself");
   const [selectedCommunicationMethod, setSelectedCommunicationMethod] =
     useState("none");
   const inputClassList =
@@ -9,7 +9,7 @@ export default function ContactForm() {
 
   return (
     <form
-      action="https://formsubmit.co/contact@firasalalam.clinic"
+      action="https://formsubmit.co/6db798b9497aacecf3e3420d187f9e43"
       method="POST"
       className="space-y-4"
     >
@@ -19,24 +19,27 @@ export default function ContactForm() {
         value="https://firasalalam.clinic/thanks"
       />
       <input
+        id="email-subject"
         type="hidden"
         name="_subject"
-        value="New submission on firasalalam.clinic"
+        value="New submission on firasalalam.clinic from "
       />
       <input type="hidden" name="_captcha" value="false" />
       <input type="text" name="_honey" style={{ display: "none" }} />
+
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div>
           <label className="label">
             <span className="label-text text-black">I am here for</span>
           </label>
           <select
-            className="select-primary select w-72 max-w-6xl border-opacity-20 font-normal focus:ring-0 focus:ring-offset-0 focus:outline-none"
+            className="select-primary select w-72 max-w-6xl border-opacity-20 font-normal focus:outline-none focus:ring-0 focus:ring-offset-0"
             name="I am here for"
             value={selectedPerson}
             onChange={(e) => {
               setSelectedPerson(e.target.value);
             }}
+            required={true}
           >
             <option disabled={true} value="none">
               I am here for
@@ -59,142 +62,311 @@ export default function ContactForm() {
               type="text"
               id="lastName"
               name="Last Name"
+              required={true}
             />
           </div>
         )}
       </div>
 
-      {selectedPerson === "Someone else" && (
-        <>
-          <div className="divider" />
-          <div>
-            {" "}
-            Please fill this section with{" "}
-            <span className="underline"> your personal information.</span>{" "}
-          </div>
-        </>
-      )}
-
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <div>
-          <label className="label">
-            <span className="label-text text-black">First Name</span>
-          </label>
-          <input
-            className={inputClassList}
-            placeholder="First Name"
-            type="text"
-            id="firstName"
-            name="First Name"
-          />
-        </div>
-        <div>
-          <label className="label">
-            <span className="label-text text-black">Last Name</span>
-          </label>
-          <input
-            className={inputClassList}
-            placeholder="Last Name"
-            type="text"
-            id="lastName"
-            name="Last Name"
-          />
-        </div>
-      </div>
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <div>
-          <label className="label">
-            <span className="label-text text-black">Email Address</span>
-          </label>
-          <input
-            className={inputClassList}
-            placeholder="Email address"
-            type="email"
-            id="email"
-            name="email"
-          />
-        </div>
-
-        <div>
-          <label className="label">
-            <span className="label-text text-black">Phone Number</span>
-          </label>
-          <input
-            className={inputClassList}
-            placeholder="Phone Number"
-            type="tel"
-            name="phone"
-            id="phone"
-          />
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <div>
-          <label className="label">
-            <span className="label-text">Preferred communication method</span>
-          </label>
-          <select
-            className="select-primary select w-72 max-w-6xl border-opacity-20 font-normal focus:ring-0 focus:ring-offset-0 focus:outline-none"
-            name="Preffered communication method"
-            value={selectedCommunicationMethod}
-            onChange={(e) => {
-              setSelectedCommunicationMethod(e.target.value);
-            }}
-          >
-            <option disabled={true} value="none">
-              Preferred Communication Method
-            </option>
-            <option value="Phone">Phone</option>
-            <option value="Email">Email</option>
-            <option value="Telegram">Telegram</option>
-            <option value="Whatsapp">Whatsapp</option>
-          </select>
-        </div>
-
-        {selectedCommunicationMethod === "Phone" && (
-          <div>
-            <label className="label">
-              <span className="label-text text-black">
-                Best time to contact you
-              </span>
-            </label>
-            <input
-              className={inputClassList}
-              placeholder="Days of week, time of day, etc"
-              type="text"
-              name="Best time to contact"
-              id="bestTimeToContact"
-            />
-          </div>
-        )}
-      </div>
-
-      {selectedPerson === "Someone else" && (
+      {selectedPerson === "Myself" && (
         <>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div>
+              <label className="label">
+                <span className="label-text text-black">First Name</span>
+              </label>
+              <input
+                className={inputClassList}
+                placeholder="First Name"
+                type="text"
+                id="firstName"
+                name="First Name"
+                required={true}
+              />
+            </div>
+            <div>
+              <label className="label">
+                <span className="label-text text-black">Last Name</span>
+              </label>
+              <input
+                className={inputClassList}
+                placeholder="Last Name"
+                type="text"
+                id="lastName"
+                name="Last Name"
+                required={true}
+              />
+            </div>
             <div>
               <label className="label">
                 <span className="label-text text-black">Gender</span>
               </label>
               <select
-                className="select-primary select w-72 max-w-6xl border-opacity-20 font-normal focus:ring-0 focus:ring-offset-0 focus:outline-none"
-                name="Gender of person contacting you"
+                className="select-primary select w-72 max-w-6xl border-opacity-20 font-normal focus:outline-none focus:ring-0 focus:ring-offset-0"
+                name="I identify as a"
                 defaultValue={0}
               >
-                <option disabled={true}>Your Gender</option>
+                <option disabled={true}>I identify as</option>
                 <option>Man</option>
                 <option>Woman</option>
-                <option>Non-Binary</option>
-                <option>Transgender</option>
+                <option>Non-Binary person</option>
+                <option>Transgender man</option>
+                <option>Transgender woman</option>
                 <option>Other</option>
                 <option>Prefer not to say</option>
               </select>
             </div>
+
+            <div>
+              <label className="label">
+                <span className="label-text text-black">Age</span>
+              </label>
+              <input
+                className={inputClassList}
+                placeholder="Age"
+                type="text"
+                name="Age"
+                id="age"
+                required={true}
+              />
+            </div>
+            <div>
+              <label className="label">
+                <span className="label-text text-black">
+                  Country of residence
+                </span>
+              </label>
+              <input
+                className={inputClassList}
+                placeholder="e.g. Lebanon"
+                type="text"
+                id="country"
+                name="country of residence"
+                required={true}
+              />
+            </div>
+
+            <div>
+              <label className="label">
+                <span className="label-text text-black">Email Address</span>
+              </label>
+              <input
+                className={inputClassList}
+                placeholder="email@example.com"
+                type="email"
+                id="email"
+                name="email"
+                required={true}
+              />
+            </div>
+
+            <div>
+              <label className="label">
+                <span className="label-text text-black">Phone Number (Include country code)</span>
+              </label>
+              <input
+                className={inputClassList}
+                placeholder="e.g. +961 70123456"
+                type="tel"
+                name="phone"
+                id="phone"
+                required={true}
+              />
+            </div>
+            <div>
+              <label className="label">
+                <span className="label-text">
+                  Preferred communication method
+                </span>
+              </label>
+              <select
+                className="select-primary select w-72 max-w-6xl border-opacity-20 font-normal focus:outline-none focus:ring-0 focus:ring-offset-0"
+                name="Preffered communication method"
+                value={selectedCommunicationMethod}
+                onChange={(e) => {
+                  setSelectedCommunicationMethod(e.target.value);
+                }}
+              >
+                <option disabled={true} value="none">
+                  Preferred Communication Method
+                </option>
+                <option value="Phone">Phone</option>
+                <option value="Email">Email</option>
+                <option value="Telegram">Telegram</option>
+                <option value="Whatsapp">Whatsapp</option>
+              </select>
+            </div>
           </div>
-          <div className="divider" />
-          <div>
-            {" "}
+
+          {selectedCommunicationMethod === "Phone" && (
+            <div>
+              <label className="label">
+                <span className="label-text text-black">
+                  Best time to contact you
+                </span>
+              </label>
+              <input
+                className={inputClassList}
+                placeholder="Days of week, time of day, etc"
+                type="text"
+                name="Best time to contact"
+                id="bestTimeToContact"
+                required={true}
+              />
+            </div>
+          )}
+        </>
+      )}
+
+      {selectedPerson === "Someone else" && (
+        <>
+          <div
+            className="divider divider-vertical mx-auto w-4/5"
+            aria-hidden={true}
+          ></div>
+          <div className="text-center">
+            Please fill this section with{" "}
+            <span className="underline"> your personal information.</span>{" "}
+          </div>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div>
+              <label className="label">
+                <span className="label-text text-black">First Name</span>
+              </label>
+              <input
+                className={inputClassList}
+                placeholder="First Name"
+                type="text"
+                id="firstName"
+                name="First Name"
+                required={true}
+              />
+            </div>
+            <div>
+              <label className="label">
+                <span className="label-text text-black">Last Name</span>
+              </label>
+              <input
+                className={inputClassList}
+                placeholder="Last Name"
+                type="text"
+                id="lastName"
+                name="Last Name"
+                required={true}
+              />
+            </div>
+            <div>
+              <label className="label">
+                <span className="label-text text-black">Gender</span>
+              </label>
+              <select
+                className="select-primary select w-72 max-w-6xl border-opacity-20 font-normal focus:outline-none focus:ring-0 focus:ring-offset-0"
+                name="I identify as a"
+                defaultValue={0}
+              >
+                <option disabled={true}>I identify as</option>
+                <option>Man</option>
+                <option>Woman</option>
+                <option>Non-Binary person</option>
+                <option>Transgender man</option>
+                <option>Transgender woman</option>
+                <option>Other</option>
+                <option>Prefer not to say</option>
+              </select>
+            </div>
+
+            <div>
+              <label className="label">
+                <span className="label-text text-black">
+                  Country of residence
+                </span>
+              </label>
+              <input
+                className={inputClassList}
+                placeholder="e.g. Lebanon"
+                type="text"
+                id="country"
+                name="country of residence"
+                required={true}
+              />
+            </div>
+
+            <div>
+              <label className="label">
+                <span className="label-text text-black">Email Address</span>
+              </label>
+              <input
+                className={inputClassList}
+                placeholder="email@example.com"
+                type="email"
+                id="email"
+                name="email"
+                required={true}
+              />
+            </div>
+
+            <div>
+              <label className="label">
+                <span className="label-text text-black">Phone Number (Include country code)</span>
+              </label>
+              <input
+                className={inputClassList}
+                placeholder="e.g. +961 70123456"
+                type="tel"
+                name="phone"
+                id="phone"
+                required={true}
+              />
+            </div>
+            <div>
+              <label className="label">
+                <span className="label-text">
+                  Preferred communication method
+                </span>
+              </label>
+              <select
+                className="select-primary select w-72 max-w-6xl border-opacity-20 font-normal focus:outline-none focus:ring-0 focus:ring-offset-0"
+                name="Preffered communication method"
+                value={selectedCommunicationMethod}
+                onChange={(e) => {
+                  setSelectedCommunicationMethod(e.target.value);
+                }}
+              >
+                <option disabled={true} value="none">
+                  Preferred Communication Method
+                </option>
+                <option value="Phone">Phone</option>
+                <option value="Email">Email</option>
+                <option value="Telegram">Telegram</option>
+                <option value="Whatsapp">Whatsapp</option>
+              </select>
+            </div>
+
+            {selectedCommunicationMethod === "Phone" && (
+              <div>
+                <label className="label">
+                  <span className="label-text text-black">
+                    Best time to contact you
+                  </span>
+                </label>
+                <input
+                  className={inputClassList}
+                  placeholder="Days of week, time of day, etc"
+                  type="text"
+                  name="Best time to contact"
+                  id="bestTimeToContact"
+                  required={true}
+                />
+              </div>
+            )}
+          </div>
+
+          <div
+            className="divider divider-vertical mx-auto w-4/5"
+            aria-hidden={true}
+          ></div>
+
+          <div className="text-center">
             Please fill this section with the information of{" "}
             <span className="underline">the person you are here for.</span>
           </div>
@@ -207,8 +379,9 @@ export default function ContactForm() {
                 className={inputClassList}
                 placeholder="First Name"
                 type="text"
-                id="firstNameOtherPerson"
-                name="First Name of person I am here for"
+                id="firstName"
+                name="Patient's First Name"
+                required={true}
               />
             </div>
             <div>
@@ -219,79 +392,86 @@ export default function ContactForm() {
                 className={inputClassList}
                 placeholder="Last Name"
                 type="text"
-                id="lastNameOtherPerson"
-                name="Last Name of person I am here for"
+                id="lastName"
+                name="Patient's Last Name"
+                required={true}
+              />
+            </div>
+            <div>
+              <label className="label">
+                <span className="label-text text-black">Gender</span>
+              </label>
+              <select
+                className="select-primary select w-72 max-w-6xl border-opacity-20 font-normal focus:outline-none focus:ring-0 focus:ring-offset-0"
+                name="Patient identifies as a"
+                defaultValue={0}
+              >
+                <option disabled={true}>I identify as</option>
+                <option>Man</option>
+                <option>Woman</option>
+                <option>Non-Binary person</option>
+                <option>Transgender man</option>
+                <option>Transgender woman</option>
+                <option>Other</option>
+                <option>Prefer not to say</option>
+              </select>
+            </div>
+
+            <div>
+              <label className="label">
+                <span className="label-text text-black">Age</span>
+              </label>
+              <input
+                className={inputClassList}
+                placeholder="Age"
+                type="text"
+                name="Patient's age"
+                id="age"
+                required={true}
               />
             </div>
           </div>
         </>
       )}
 
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <div>
-          <label className="label">
-            <span className="label-text text-black">Gender</span>
-          </label>
-          <select
-            className="select-primary select w-72 max-w-6xl border-opacity-20 font-normal focus:ring-0 focus:ring-offset-0 focus:outline-none"
-            name={
-              selectedPerson === "Someone else"
-                ? "Gender of person I am here for"
-                : "Gender"
-            }
-            defaultValue={0}
-          >
-            <option disabled={true}>
-              {selectedPerson === "Someone else"
-                ? "Person's Gender"
-                : "Your Gender"}
-            </option>
-            <option>Man</option>
-            <option>Woman</option>
-            <option>Non-Binary</option>
-            <option>Transgender</option>
-            <option>Other</option>
-            <option>Prefer not to say</option>
-          </select>
-        </div>
-
-        <div>
-          <label className="label">
-            <span className="label-text text-black">Age</span>
-          </label>
-          <input
-            className={inputClassList}
-            placeholder={
-              selectedPerson === "Someone else" ? "Person's Age" : "Age"
-            }
-            type="text"
-            name={
-              selectedPerson === "Someone else"
-                ? "Age of person I am here for"
-                : "Age"
-            }
-            id="age"
-          />
-        </div>
-      </div>
-
       <div>
         <div className="form-control">
-          <input
-            type="hidden"
-            name="My main concerns are:"
-            value="-----------"
-          />
+          <input type="hidden" name="My main concerns are:" />
+
+          <div
+            className="divider divider-vertical mx-auto w-4/5"
+            aria-hidden={true}
+          ></div>
           <h4 className="pb-2">
-            What are your main concerns? You can select all that apply
+            What are your main concerns? Select all that apply.
           </h4>
-          <h4 className="label-text-alt pb-2">
-            You can hover over any item to view its description
+          <h4 className="label-text-alt pb-2 text-sm italic">
+            You can click on the{" "}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="inline h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-label="info"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>{" "}
+            icon to learn more about an item
           </h4>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4 sm:w-5/6 sm:grid-cols-1 md:w-3/5 lg:w-5/6">
             {getAdhdSymptomsHTMLBlock()}
           </div>
-          <input type="hidden" name="--------------" value="-----------" />
+          <input type="hidden" name="--------------" />
+          <div
+            className="divider divider-vertical mx-auto w-4/5"
+            aria-hidden={true}
+          ></div>
         </div>
 
         <div>
@@ -309,16 +489,24 @@ export default function ContactForm() {
           />
         </div>
         <div className="mt-4">
-        <button
-        className="group relative me-12"
-        type="submit"
-      >
-        <span
-          className="inset-0 inline-block border-2 border-black bg-black px-8 py-3 text-sm font-bold uppercase tracking-widest text-white transition-transform group-hover:bg-white group-hover:text-black"
-        >
-          Submit
-        </span>
-      </button>
+          <button
+            className="group relative me-12"
+            onClick={() => {
+              const hiddenInput = document.getElementById(
+                "email-subject"
+              ) as HTMLInputElement;
+              const emailInput = document.getElementById(
+                "email-input"
+              ) as HTMLInputElement;
+              hiddenInput.value += emailInput.value;
+            }}
+            type="submit"
+            id="submit-button"
+          >
+            <span className="inset-0 inline-block border-2 border-black bg-black px-8 py-3 text-sm font-bold uppercase tracking-widest text-white transition-transform group-hover:bg-white group-hover:text-black">
+              Submit
+            </span>
+          </button>
         </div>
       </div>
     </form>
@@ -349,24 +537,51 @@ function getAdhdSymptomsHTMLBlock(): JSX.Element[] {
 
   const adhdSymptomsBlock: JSX.Element[] = [];
 
-  // TODO: these need a tooltip for mobile view
   Object.entries(adhdSymptomsMap).forEach(([symptom, desc]) => {
     adhdSymptomsBlock.push(
-      <label className="label cursor-pointer" key={symptom}>
-        <div
-          className="tooltip text-start"
-          style={
-            {
-              "--tooltip-color": "#EEE",
-              "--tooltip-text-color": "#000",
-            } as React.CSSProperties
-          }
-          data-tip={desc}
-        >
-          <span className="label-text pe-5 font-semibold">{symptom}</span>
-        </div>
-        <input type="checkbox" className="checkbox focus:ring-0 focus:ring-offset-0 focus:outline-none" name={symptom} />
-      </label>
+      <>
+        <label className="label cursor-pointer" key={symptom}>
+          <div>
+            <svg
+              onClick={() => {
+                const modal = document.getElementById(`modal-${symptom}`) as HTMLDialogElement;
+                modal.showModal()
+              }}
+              xmlns="http://www.w3.org/2000/svg"
+              className="inline-flex h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <span className="label-text pe-5 ps-3 font-semibold">
+              {symptom}
+            </span>
+          </div>
+          <input
+            id={`checkbox${symptom}`}
+            type="checkbox"
+            className="checkbox focus:outline-none focus:ring-0 focus:ring-offset-0"
+            name={symptom}
+            aria-label={`Toggle ${symptom}`}
+          />
+        </label>
+        <dialog id={`modal-${symptom}`} className="modal">
+          <form method="dialog" className="modal-box">
+            <button className="btn-ghost btn-sm btn-circle btn absolute right-2 top-2">
+              ✕
+            </button>
+            <h3 className="text-lg font-bold">{symptom}</h3>
+            <p className="py-4">{desc}</p>
+          </form>
+        </dialog>
+      </>
     );
   });
 

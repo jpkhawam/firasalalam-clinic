@@ -11,7 +11,7 @@ import { Picture } from "@astrojs/image/components";
   <div class="hero-content flex-col lg:flex-row-reverse">
     <Picture
       src="https://i.guim.co.uk/img/media/566c303b45612e76d0422d6b905ce685c9016a8f/0_0_1875_2500/master/1875.jpg?w=1200&q=55&auto=format&usm=12&fit=max&s=f59321a066fea0b5b463f25ccf78144b"
-      class="max-w-sm dark:rounded-lg rounded-sm shadow-2xl"
+      class="max-w-sm rounded-sm shadow-2xl dark:rounded-lg"
       widths={[400, 800, 1200]}
       aspectRatio="2:3"
       alt="TODO: alt text needs to go here"
@@ -22,10 +22,7 @@ import { Picture } from "@astrojs/image/components";
         You're in the right place- Let's talk today.
       </h1>
       <p class="py-6 text-lg">Get in contact with Dr. Firas Al Alam today</p>
-      <a
-        href="/contact/"
-        class="group relative inline-block dark:hidden"
-      >
+      <a href="/contact/" class="group relative inline-block dark:hidden">
         <span
           class="absolute inset-0 translate-x-1.5 translate-y-1.5 bg-black transition-transform group-hover:translate-x-0 group-hover:translate-y-0"
         ></span>
