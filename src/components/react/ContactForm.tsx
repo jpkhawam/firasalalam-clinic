@@ -58,7 +58,7 @@ export default function ContactForm() {
             </label>
             <input
               className={inputClassList}
-              placeholder="Specify relationship to that person"
+              placeholder="e.g. I'm the mother/caregiver/friend"
               type="text"
               id="lastName"
               name="Last Name"
@@ -162,7 +162,9 @@ export default function ContactForm() {
 
             <div>
               <label className="label">
-                <span className="label-text text-black">Phone Number (Include country code)</span>
+                <span className="label-text text-black">
+                  Phone Number (Include country code)
+                </span>
               </label>
               <input
                 className={inputClassList}
@@ -307,7 +309,9 @@ export default function ContactForm() {
 
             <div>
               <label className="label">
-                <span className="label-text text-black">Phone Number (Include country code)</span>
+                <span className="label-text text-black">
+                  Phone Number (Include country code)
+                </span>
               </label>
               <input
                 className={inputClassList}
@@ -544,8 +548,16 @@ function getAdhdSymptomsHTMLBlock(): JSX.Element[] {
           <div>
             <svg
               onClick={() => {
-                const modal = document.getElementById(`modal-${symptom}`) as HTMLDialogElement;
-                modal.showModal()
+                if (navigator.userAgent.match(/chrome|chromium|crios/i)) {
+                  const checkbox = document.getElementById(
+                    `checkbox${symptom}`
+                  ) as HTMLInputElement;
+                  checkbox.checked = !checkbox.checked;
+                }
+                const modal = document.getElementById(
+                  `modal-${symptom}`
+                ) as HTMLDialogElement;
+                modal.showModal();
               }}
               xmlns="http://www.w3.org/2000/svg"
               className="inline-flex h-5 w-5"
@@ -574,7 +586,7 @@ function getAdhdSymptomsHTMLBlock(): JSX.Element[] {
         </label>
         <dialog id={`modal-${symptom}`} className="modal">
           <form method="dialog" className="modal-box">
-            <button className="btn-ghost btn-sm btn-circle btn absolute right-2 top-2">
+            <button className="btn-ghost btn-sm btn-circle btn absolute right-3 top-3">
               ✕
             </button>
             <h3 className="text-lg font-bold">{symptom}</h3>
