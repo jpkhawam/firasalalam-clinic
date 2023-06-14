@@ -58,7 +58,7 @@ export default function ContactForm() {
             </label>
             <input
               className={inputClassList}
-              placeholder="e.g. I'm the mother/caregiver/friend"
+              placeholder="e.g. I'm the mother, caregiver, friend, etc"
               type="text"
               id="lastName"
               name="Last Name"
@@ -106,7 +106,7 @@ export default function ContactForm() {
                 name="I identify as a"
                 defaultValue={0}
               >
-                <option disabled={true}>I identify as</option>
+                <option disabled={true} value={0}>I identify as</option>
                 <option>Man</option>
                 <option>Woman</option>
                 <option>Non-Binary person</option>
@@ -266,7 +266,7 @@ export default function ContactForm() {
                 name="I identify as a"
                 defaultValue={0}
               >
-                <option disabled={true}>I identify as</option>
+                <option disabled={true} value={0}>I identify as</option>
                 <option>Man</option>
                 <option>Woman</option>
                 <option>Non-Binary person</option>
@@ -410,7 +410,7 @@ export default function ContactForm() {
                 name="Patient identifies as a"
                 defaultValue={0}
               >
-                <option disabled={true}>I identify as</option>
+                <option disabled={true} value={0}>Identifies as</option>
                 <option>Man</option>
                 <option>Woman</option>
                 <option>Non-Binary person</option>
