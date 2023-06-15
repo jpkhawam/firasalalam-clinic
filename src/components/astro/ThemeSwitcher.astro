@@ -1,6 +1,9 @@
 <label class="swap swap-rotate me-5 ms-5">
   <input type="checkbox" class="hidden" />
   <svg
+    id="set-dark-theme"
+    data-set-theme="dark"
+    data-act-class="ACTIVECLASS"
     class="swap-on h-7 w-7 fill-current dark:fill-brand"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
@@ -9,6 +12,9 @@
     ></path></svg
   >
   <svg
+    id="set-light-theme"
+    data-set-theme="fantasy"
+    data-act-class="ACTIVECLASS"
     class="swap-off h-7 w-7 fill-current dark:fill-brand"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
@@ -17,3 +23,14 @@
     ></path></svg
   >
 </label>
+
+<script>
+  const setDarkTheme = document.getElementById("set-dark-theme");
+  setDarkTheme?.addEventListener("click", () => {
+    document.documentElement.classList.add("dark");
+  });
+  const setLightTheme = document.getElementById("set-light-theme");
+  setLightTheme?.addEventListener("click", () => {
+    document.documentElement.classList.remove("dark");
+  });
+</script>
