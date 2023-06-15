@@ -5,7 +5,7 @@ import LanguageSwitcher from "./LanguageSwitcher.astro";
 <div class="drawer-side">
   <label for="navigation-drawer" class="drawer-overlay"></label>
   <div
-    class="menu h-full max-h-none w-full max-w-none overflow-scroll bg-white p-4 px-10 text-base-content dark:bg-[#1B1E26] md:w-[25rem]"
+    class="menu h-[115vh] max-h-none w-full max-w-none bg-white p-4 px-10 text-base-content dark:bg-[#1B1E26] md:w-[25rem]"
   >
     <div>
       <button
@@ -19,7 +19,7 @@ import LanguageSwitcher from "./LanguageSwitcher.astro";
       Firas Al Alam
     </div>
     <div
-      class="my-5 mb-0 flex flex-col items-center justify-center gap-x-5 gap-y-3 sm:flex-row"
+      class="mb-0 mt-8 flex flex-col items-center justify-center gap-x-5 gap-y-3 sm:flex-row"
     >
       <LanguageSwitcher />
       <div
@@ -29,7 +29,7 @@ import LanguageSwitcher from "./LanguageSwitcher.astro";
           id="drawer-set-light-theme"
           data-set-theme="fantasy"
           data-act-class="ACTIVECLASS"
-          class="swap-on inline-flex h-6 w-6 fill-current"
+          class="swap-on inline-flex h-6 w-6 cursor-pointer fill-current"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           ><path
@@ -41,7 +41,7 @@ import LanguageSwitcher from "./LanguageSwitcher.astro";
           id="drawer-set-dark-theme"
           data-set-theme="dark"
           data-act-class="ACTIVECLASS"
-          class="swap-off inline-flex h-6 w-6 fill-current"
+          class="swap-off inline-flex h-6 w-6 cursor-pointer fill-current"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           ><path
@@ -53,31 +53,31 @@ import LanguageSwitcher from "./LanguageSwitcher.astro";
 
     <div class="mt-8 flex flex-col justify-center text-xl dark:text-white">
       <div>
-        <div class="hover:underline">About me</div>
+        <div class="cursor-pointer hover:underline">About me</div>
         <div class="divider divider-vertical w-full"></div>
       </div>
       <div>
-        <div class="hover:underline">Certificates</div>
+        <div class="cursor-pointer hover:underline">Certificates</div>
         <div class="divider divider-vertical w-full"></div>
       </div>
       <div>
-        <div class="hover:underline">Clinical Approach</div>
+        <div class="cursor-pointer hover:underline">Clinical Approach</div>
         <div class="divider divider-vertical w-full"></div>
       </div>
       <div>
-        <div class="hover:underline">Targeted Difficulties</div>
+        <div class="cursor-pointer hover:underline">Targeted Difficulties</div>
         <div class="divider divider-vertical w-full"></div>
       </div>
       <div>
-        <div class="hover:underline">Skills Building</div>
+        <div class="cursor-pointer hover:underline">Skills Building</div>
         <div class="divider divider-vertical w-full"></div>
       </div>
       <div>
-        <div class="hover:underline">Pricing</div>
+        <div class="cursor-pointer hover:underline">Pricing</div>
         <div class="divider divider-vertical w-full"></div>
       </div>
       <div>
-        <div class="hover:underline">Contact</div>
+        <div class="cursor-pointer hover:underline">Contact</div>
         <div class="divider divider-vertical w-full"></div>
       </div>
     </div>
