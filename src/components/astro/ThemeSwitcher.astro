@@ -28,6 +28,23 @@
   const themeCheckbox = document.getElementById(
     "theme-checkbox"
   ) as HTMLInputElement;
+
+  if (
+    localStorage.getItem("theme") === "dark" ||
+    (!("theme" in localStorage) &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches)
+  ) {
+    matchCurrentTheme(themeCheckbox, true);
+  } else {
+    matchCurrentTheme(themeCheckbox, false);
+  }
+
+  window
+    .matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", ({ matches }) => {
+      matchCurrentTheme(themeCheckbox, matches);
+    });
+
   const setDarkTheme = document.getElementById("set-dark-theme");
   setDarkTheme?.addEventListener("click", () => {
     document.documentElement.classList.add("dark");
@@ -37,17 +54,18 @@
     document.documentElement.classList.remove("dark");
   });
 
-  window
-    .matchMedia("(prefers-color-scheme: dark)")
-    .addEventListener("change", ({ matches }) => {
-      if (matches) {
-        if (!themeCheckbox.checked) {
-          themeCheckbox.checked = !themeCheckbox.checked;
-        }
-      } else {
-        if (themeCheckbox.checked) {
-          themeCheckbox.checked = !themeCheckbox.checked;
-        }
+  function matchCurrentTheme(
+    themeCheckbox: HTMLInputElement,
+    darkMode: boolean
+  ) {
+    if (darkMode) {
+      if (!themeCheckbox.checked) {
+        themeCheckbox.checked = !themeCheckbox.checked;
       }
-    });
+    } else {
+      if (themeCheckbox.checked) {
+        themeCheckbox.checked = !themeCheckbox.checked;
+      }
+    }
+  }
 </script>
