@@ -1,5 +1,5 @@
 <label class="swap swap-rotate me-5 ms-5">
-  <input type="checkbox" class="hidden" />
+  <input type="checkbox" class="hidden" id="theme-checkbox" />
   <svg
     id="set-dark-theme"
     data-set-theme="dark"
@@ -25,6 +25,9 @@
 </label>
 
 <script>
+  const themeCheckbox = document.getElementById(
+    "theme-checkbox"
+  ) as HTMLInputElement;
   const setDarkTheme = document.getElementById("set-dark-theme");
   setDarkTheme?.addEventListener("click", () => {
     document.documentElement.classList.add("dark");
@@ -33,4 +36,18 @@
   setLightTheme?.addEventListener("click", () => {
     document.documentElement.classList.remove("dark");
   });
+
+  window
+    .matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", ({ matches }) => {
+      if (matches) {
+        if (!themeCheckbox.checked) {
+          themeCheckbox.checked = !themeCheckbox.checked;
+        }
+      } else {
+        if (themeCheckbox.checked) {
+          themeCheckbox.checked = !themeCheckbox.checked;
+        }
+      }
+    });
 </script>

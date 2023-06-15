@@ -30,6 +30,17 @@ const { title } = Astro.props;
       } else {
         document.documentElement.classList.remove("dark");
       }
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", ({ matches }) => {
+          if (matches) {
+            document.documentElement.classList.add("dark");
+            document.documentElement.setAttribute("data-theme", "dark");
+          } else {
+            document.documentElement.classList.remove("dark");
+            document.documentElement.setAttribute("data-theme", "fantasy");
+          }
+        });
     </script>
     <script>
       import { themeChange } from "theme-change";
