@@ -1,3 +1,8 @@
+---
+const path = Astro.url.pathname;
+const currentLocaleArabic = path.startsWith("/ar");
+---
+
 <div class="contents">
   <svg
     class="h-7 w-7 fill-current dark:fill-brand"
@@ -15,9 +20,30 @@
       ></path>
     </g></svg
   >
-  <div class="ms-3 dark:text-brand">
-    <span class="mx-1 font-semibold"> EN</span>
-    |
-    <span class="mx-1"> عربي</span>
-  </div>
+
+  {
+    currentLocaleArabic && (
+      <div class="ms-3 dark:text-brand">
+        <a class="mx-1 font-semibold" href={path.substring(2)}>
+          {" "}
+          EN
+        </a>
+        |<span class="mx-1"> عربي</span>
+      </div>
+    )
+  }
+
+  {
+    !currentLocaleArabic && (
+      <div class="ms-3 dark:text-brand">
+        <span class="mx-1"> EN</span>|
+        <a class="mx-1 font-semibold" href={`/ar${path}`}>
+          {" "}
+          عربي
+        </a>
+      </div>
+    )
+  }
 </div>
+
+<script></script>
