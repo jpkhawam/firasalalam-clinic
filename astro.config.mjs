@@ -13,7 +13,22 @@ export default defineConfig({
     image({
       serviceEntryPoint: "@astrojs/image/sharp",
     }),
-    sitemap(),
+    sitemap(
+      {
+        i18n: {
+          defaultLocale: "en",
+          locales: {
+            en: "en-US",
+            ar: "ar-LB",
+          },
+        },
+      },
+      {
+        filter: (page) =>
+          page !== "https://firasalalam.clinic/thanks" &&
+          page !== "https://firasalalam.clinic/404",
+      }
+    ),
     react(),
     astroI18next(),
   ],
