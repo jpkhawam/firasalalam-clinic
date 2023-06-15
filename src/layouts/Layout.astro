@@ -13,14 +13,23 @@ const { title } = Astro.props;
 <html lang="en" class="scroll-smooth">
   <head>
     <script is:inline>
+      // On website load, if there is nothing in the local storage
       if (localStorage.getItem("theme") === null) {
-        document.documentElement.setAttribute("data-theme", "fantasy");
+        // set the theme based on the system theme
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        } else {
+          document.documentElement.setAttribute("data-theme", "fantasy");
+        }
       } else {
+        // Local storage is not empty, follow user's theme
         document.documentElement.setAttribute(
           "data-theme",
           localStorage.getItem("theme")
         );
       }
+
+      // this section is to let Tailwind know the current theme
       if (
         localStorage.getItem("theme") === "dark" ||
         (!("theme" in localStorage) &&
@@ -30,6 +39,8 @@ const { title } = Astro.props;
       } else {
         document.documentElement.classList.remove("dark");
       }
+
+      // add an event listener for when the user changes system theme
       window
         .matchMedia("(prefers-color-scheme: dark)")
         .addEventListener("change", ({ matches }) => {
