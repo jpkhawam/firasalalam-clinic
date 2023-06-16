@@ -3,31 +3,71 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Firas Al Alam | Pricing">
-    <section class="bg-gradient-to-b from-cream to-white">
-        <div class="flex flex-col items-center text-center">
-            <div class="text-lg font-semibold text-gray-800 dark:text-brand mt-3">Pricing</div>
-            <div><h1 class="text-5xl font-black font-sans mt-3 mb-5">Transparent pricing from the start</h1></div>
-            <div class="max-w-prose">Distinctio et nulla eum soluta et neque labore quibusdam. Saepe et quasi iusto modi velit ut non voluptas in. Explicabo id ut laborum.</div>
-        </div>
-        <main>
-            <div class="flex flex-row justify-center mt-10 text-center">
-                <div class="w-1/5">
-                    <div class="text-xl font-bold mb-7">General pricing</div>
-                    <div><span class="text-4xl font-black">$40 </span>
-                        <span class="label-text-alt text-sm font-semibold">/session</span></div>
-                </div>
-                <div class="divider divider-horizontal mx-10"></div>
-                <div class="w-1/5">
-                    <div class="text-xl font-bold mb-7">University students</div>
-                    <div><span class="text-4xl font-black">$20 </span>
-                        <span class="label-text-alt text-sm font-semibold">/session</span></div>
-                </div>
+  <section
+    class="h-full bg-gradient-to-b from-cream to-white dark:bg-gradient-to-b dark:from-base-200 dark:to-base-200"
+  >
+    <div class="flex flex-col items-center text-center">
+      <div class="mt-3 text-lg font-semibold text-gray-800 dark:text-brand">
+        Pricing
+      </div>
+      <div>
+        <h1 class="mb-5 mt-3 font-sans text-5xl font-black">
+          Transparent pricing from the start
+        </h1>
+      </div>
+      <div class="max-w-prose">
+        Distinctio et nulla eum soluta et neque labore quibusdam. Saepe et quasi
+        iusto modi velit ut non voluptas in. Explicabo id ut laborum.
+      </div>
+    </div>
+    <main>
+      <div class="mt-10 flex flex-row justify-center text-center">
+        <div class="w-1/5">
+          <div class="mb-7 text-xl font-bold">General pricing</div>
+          <div>
+            <span class="text-4xl font-black">$40</span>
+            <span class="label-text-alt text-sm font-semibold">/session</span>
+          </div>
+          <div class="mt-3">
+            <div class="[font-weight:500;]">
+              2 sessions<span class="label-text-alt text-sm">/month</span>
+              {"->"} $80
             </div>
-        </main>
-        <div class="divider divider-vertical w-2/3 mx-auto my-7 mt-10"></div>
-        <div class="flex flex-col items-center text-center mb-10">
-            <div><h1 class="text-5xl font-black font-sans mt-3 mb-5">Pricing FAQ</h1></div>
-            <div class="max-w-prose">Distinctio et nulla eum soluta et neque labore quibusdam. Saepe et quasi iusto modi velit ut non voluptas in. Explicabo id ut laborum.</div>
+            <div class="[font-weight:500;]">
+              4 sessions<span class="label-text-alt text-sm">/month</span>
+              {"->"} $160
+            </div>
+          </div>
         </div>
-    </section>
+        <div class="divider divider-horizontal mx-10"></div>
+        <div class="w-1/5">
+          <div class="mb-7 text-xl font-bold">University students</div>
+          <div>
+            <span class="text-4xl font-black">$20</span>
+            <span class="label-text-alt text-sm font-semibold">/session</span>
+          </div>
+          <div class="mt-3">
+            <div class="[font-weight:500;]">
+              2 sessions<span class="label-text-alt text-sm">/month</span>
+              {"->"} $40
+            </div>
+            <div class="[font-weight:500;]">
+              4 sessions<span class="label-text-alt text-sm">/month</span>
+              {"->"} $80
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="divider divider-vertical mx-auto my-7 mt-10 w-2/3"></div>
+    <div class="mb-10 flex flex-col items-center text-center">
+      <div>
+        <h1 class="mb-5 mt-3 font-sans text-5xl font-black">Pricing FAQ</h1>
+      </div>
+      <div class="max-w-prose">
+        Distinctio et nulla eum soluta et neque labore quibusdam. Saepe et quasi
+        iusto modi velit ut non voluptas in. Explicabo id ut laborum.
+      </div>
+    </div>
+  </section>
 </Layout>
