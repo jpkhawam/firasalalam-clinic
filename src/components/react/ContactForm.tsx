@@ -512,7 +512,7 @@ export default function ContactForm() {
               type="submit"
               id="submit-button"
             >
-              <span className="inset-0 inline-block border-2 border-black bg-black px-8 py-3 text-sm font-bold uppercase tracking-widest text-white transition-transform group-hover:bg-white group-hover:text-black">
+              <span className="inset-0 inline-block border-2 border-black bg-black px-8 py-3 text-sm uppercase tracking-widest text-white transition-transform [font-weight:800;] group-hover:bg-white group-hover:text-black">
                 Submit
               </span>
             </button>

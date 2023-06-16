@@ -32,7 +32,13 @@ for (const [question, answer] of frequentlyAskedQuestions) {
 ---
 
 <div class="justify-items-center bg-cream py-10 dark:bg-base-200 lg:px-80">
-  <h2 class="pb-2 text-center text-xl">FAQ</h2>
-  <h2 class="pb-1 text-center text-4xl">Frequently Asked Questions</h2>
+  <h2
+    class="pb-2 text-center text-xl text-gray-800 [font-weight:500;] dark:text-brand"
+  >
+    FAQ
+  </h2>
+  <h2 class="pb-1 text-center text-4xl font-black">
+    Frequently Asked Questions
+  </h2>
   <div set:html={frequentlyAskedQuestionsHTMLBlock} />
 </div>

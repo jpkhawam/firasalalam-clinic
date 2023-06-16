@@ -3,25 +3,31 @@ import LanguageSwitcher from "./LanguageSwitcher.astro";
 import ThemeSwitcher from "./ThemeSwitcher.astro";
 
 const path = Astro.url.pathname;
-let extraNavbarPadding: Array<string> = [];
+const navbarClassList: Array<string> = [];
 if (path === "/") {
-  extraNavbarPadding = ["pb-8", "sm:pb-12"];
+  navbarClassList.push("pb-8", "sm:pb-12");
+}
+
+if (path === "/" || path.startsWith("/contact")) {
+  navbarClassList.push("dark:bg-[#2B303B]");
+} else {
+  navbarClassList.push("dark:bg-base-200");
 }
 ---
 
 <nav>
-  <div
-    class="navbar bg-cream px-5 py-5 dark:bg-[#2B303B]"
-    class:list={extraNavbarPadding}
-  >
+  <div class="navbar bg-cream px-5 py-5" class:list={navbarClassList}>
     <div class="navbar-start">
-      <a href="/" class="btn-ghost btn text-3xl normal-case">Firas Al Alam</a>
+      <a href="/" class="btn-ghost btn text-3xl normal-case [font-weight:800;]"
+        >Firas Al Alam</a
+      >
     </div>
     <div class="navbar-end me-6">
       <div class="hidden sm:contents">
         <LanguageSwitcher />
         <ThemeSwitcher />
       </div>
+      <!-- TODO: this is so inaccessible -->
       <label for="navigation-drawer" class="drawer-button cursor-pointer">
         <svg
           class="fill-current stroke-current dark:fill-brand dark:stroke-brand"
