@@ -1,3 +1,82 @@
 {
-    
+  "shared": {
+    "pages": {
+      "home-page": "Home page",
+      "about-me": "About Me",
+      "certificates": "Certificates",
+      "clinical-approach": "Clinical Approach",
+      "skills-building": "Skills Building",
+      "targeted-difficulties": "Targeted Difficulties",
+      "pricing": "Pricing",
+      "contact": "Contact"
+    },
+    "name": "Firas Al Alam"
+  },
+  "site": {
+    "Footer": {
+      "title": "MA Clinical Psychology",
+      "address-1": "1234 Street address",
+      "address-2": "Region goes here, Beirut",
+      "navigation": "Navigation",
+      "clinic-details": "Clinic Details",
+      "contact": {
+        "phone": "Phone",
+        "Email": "Email",
+        "Telegram": "Telegram",
+        "Whatsapp": "Whatsapp"
+      },
+      "legal": {
+        "title": "Legal",
+        "work-permit": "Work Permit",
+        "website-license": "Website License",
+        "website-source-code": "Website Source Code"
+      }
+    }
+  },
+  "404": {
+    "error": "Error",
+    "sorry": "Sorry, this page does not exist.",
+    "back": "Back to homepage"
+  },
+  "about": {},
+  "certificates": {},
+  "clinical-approach": {},
+  "contact": {
+    "paragraph-1": "",
+    "paragraph-2": "",
+    "paragraph-3": "",
+    "address": "",
+    "contact-form": {}
+  },
+  "index": {
+    "Hero": {
+      "header-1": "Looking for a psychologist?",
+      "header-2": "You're in the right place- Let's talk today.",
+      "desc": "Get in contact with Dr. Firas Al Alam today",
+      "get-started": "Get Started"
+    },
+    "Services": {
+      "title": "Services and Specialties"
+    },
+    "FAQ": {
+      "title-shorthand": "FAQ",
+      "title": "Frequently Asked Questions",
+      "question-1": "",
+      "answer-1": "",
+      "question-2": "",
+      "answer-2": "",
+      "question-3": "",
+      "answer-3": "",
+      "question-4": "",
+      "answer-4": ""
+    }
+  },
+  "pricing": {},
+  "skills-building": {},
+  "targeted-difficulties": {},
+  "thanks": {
+    "thanks": "Thank you!",
+    "paragraph": "I'll get back to you as soon as possible ",
+    "back": "Back to homepage"
+  }
 }
