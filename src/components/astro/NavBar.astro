@@ -1,10 +1,16 @@
 ---
 import LanguageSwitcher from "./LanguageSwitcher.astro";
 import ThemeSwitcher from "./ThemeSwitcher.astro";
+
+const path = Astro.url.pathname;
+let extraNavbarPadding: Array<string> = [];
+if (path === '/') {
+  extraNavbarPadding = ["pb-8", "sm:pb-12"]
+}
 ---
 
 <nav>
-  <div class="navbar bg-cream px-5 py-5 pb-8 dark:bg-[#2B303B] sm:pb-12">
+  <div class="navbar bg-cream px-5 py-5 dark:bg-[#2B303B]" class:list={extraNavbarPadding}>
     <div class="navbar-start">
       <a href="/" class="btn-ghost btn text-3xl normal-case">Firas Al Alam</a>
     </div>

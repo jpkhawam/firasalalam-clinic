@@ -122,14 +122,13 @@ export default function ContactForm() {
 
               <div>
                 <label className="label">
-                  <span className="label-text text-black">Age</span>
+                  <span className="label-text text-black">Date of birth</span>
                 </label>
                 <input
                   className={inputClassList}
-                  placeholder="Age"
-                  type="text"
-                  name="Age"
-                  id="age"
+                  type="date"
+                  name="Date of Birth"
+                  id="dateOfBirth"
                   required={true}
                 />
               </div>
@@ -430,14 +429,13 @@ export default function ContactForm() {
 
               <div>
                 <label className="label">
-                  <span className="label-text text-black">Age</span>
+                  <span className="label-text text-black">Date of Birth</span>
                 </label>
                 <input
                   className={inputClassList}
-                  placeholder="Age"
-                  type="text"
-                  name="Patient's age"
-                  id="age"
+                  type="date"
+                  name="Patient's date of birth"
+                  id="patient-date-of-birth"
                   required={true}
                 />
               </div>
