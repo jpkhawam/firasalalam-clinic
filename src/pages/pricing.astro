@@ -21,40 +21,95 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </div>
     <main>
-      <div class="mt-10 flex flex-col justify-center text-center sm:flex-row">
-        <div class="sm:w-1/5">
-          <div class="mb-7 text-xl font-bold">General pricing</div>
+      <div class="mt-10 text-center text-xl font-black">
+        For individuals currently residing <span
+          class="underline decoration-gray-500 decoration-wavy dark:decoration-brand"
+          >in Lebanon</span
+        >
+      </div>
+      <div
+        class="mx-auto mt-4 flex w-full flex-col justify-center bg-base-300 px-3 py-5 text-center dark:bg-[#262830] sm:w-4/5 md:w-3/5 lg:w-3/5 lg:flex-row"
+      >
+        <div class="lg:w-2/5">
+          <div class="mb-7 text-xl font-bold">General fee</div>
           <div>
-            <span class="text-4xl font-black">$40</span>
+            <span class="text-4xl font-black dark:text-brand">$50</span>
             <span class="label-text-alt text-sm font-semibold">/session</span>
           </div>
           <div class="mt-3">
             <div class="[font-weight:500;]">
               2 sessions<span class="label-text-alt text-sm">/month</span>
-              {"->"} $80
+              {"->"} ${50 * 2}
             </div>
             <div class="[font-weight:500;]">
               4 sessions<span class="label-text-alt text-sm">/month</span>
-              {"->"} $160
+              {"->"} ${50 * 4}
             </div>
           </div>
         </div>
-        <div class="divider divider-horizontal mx-10 hidden sm:flex"></div>
-        <div class="divider divider-vertical mx-10 sm:hidden"></div>
-        <div class="sm:w-1/5">
-          <div class="mb-7 text-xl font-bold">University students</div>
+        <div class="divider divider-horizontal mx-5 hidden lg:flex"></div>
+        <div class="divider divider-vertical mx-auto w-1/2 lg:hidden"></div>
+        <div class="lg:w-2/5">
+          <div class="mb-7 text-xl font-bold">Student fee</div>
           <div>
-            <span class="text-4xl font-black">$20</span>
+            <span class="text-4xl font-black dark:text-brand">$35</span>
             <span class="label-text-alt text-sm font-semibold">/session</span>
           </div>
           <div class="mt-3">
             <div class="[font-weight:500;]">
               2 sessions<span class="label-text-alt text-sm">/month</span>
-              {"->"} $40
+              {"->"} ${35 * 2}
             </div>
             <div class="[font-weight:500;]">
               4 sessions<span class="label-text-alt text-sm">/month</span>
-              {"->"} $80
+              {"->"} ${35 * 4}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="divider divider-vertical mx-auto w-3/5 lg:hidden"></div>
+      <div class="text-center text-xl font-black lg:mt-7">
+        For individuals currently residing <span
+          class="underline decoration-gray-500 decoration-wavy dark:decoration-brand"
+          >outside Lebanon</span
+        >
+      </div>
+      <div
+        class="mx-auto mt-4 flex w-full flex-col justify-center bg-base-300 px-3 py-5 text-center dark:bg-[#262830] sm:w-4/5 md:w-3/5 lg:w-3/5 lg:flex-row"
+      >
+        <div class="lg:w-2/5">
+          <div class="mb-7 text-xl font-bold">General fee</div>
+          <div>
+            <span class="text-4xl font-black dark:text-brand">$65</span>
+            <span class="label-text-alt text-sm font-semibold">/session</span>
+          </div>
+          <div class="mt-3">
+            <div class="[font-weight:500;]">
+              2 sessions<span class="label-text-alt text-sm">/month</span>
+              {"->"} ${65 * 2}
+            </div>
+            <div class="[font-weight:500;]">
+              4 sessions<span class="label-text-alt text-sm">/month</span>
+              {"->"} ${65 * 4}
+            </div>
+          </div>
+        </div>
+        <div class="divider divider-horizontal mx-5 hidden lg:flex"></div>
+        <div class="divider divider-vertical mx-auto w-1/2 lg:hidden"></div>
+        <div class="lg:w-2/5">
+          <div class="mb-7 text-xl font-bold">Student fee</div>
+          <div>
+            <span class="text-4xl font-black dark:text-brand">$50</span>
+            <span class="label-text-alt text-sm font-semibold">/session</span>
+          </div>
+          <div class="mt-3">
+            <div class="[font-weight:500;]">
+              2 sessions<span class="label-text-alt text-sm">/month</span>
+              {"->"} ${50 * 2}
+            </div>
+            <div class="[font-weight:500;]">
+              4 sessions<span class="label-text-alt text-sm">/month</span>
+              {"->"} ${50 * 4}
             </div>
           </div>
         </div>
