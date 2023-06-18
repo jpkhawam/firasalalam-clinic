@@ -1,6 +1,5 @@
 ---
-import i18next, { t } from "i18next";
-import { Trans, HeadHrefLangs } from "astro-i18next/components";
+import { t } from "i18next";
 import { changeLanguage } from "i18next";
 import Layout from "../layouts/Layout.astro";
 
@@ -21,7 +20,7 @@ changeLanguage("en");
           <span class="sr-only">Error</span>404
         </h2>
         <p class="pb-7 text-2xl font-semibold md:text-3xl">
-          Sorry, this page does not exist.
+          {t("404.sorry")}
         </p>
         <a href="/" class="group relative inline-block dark:hidden">
           <span
@@ -31,7 +30,7 @@ changeLanguage("en");
           <span
             class="relative inline-block border-2 border-black px-8 py-3 text-sm font-bold uppercase tracking-widest text-white group-active:text-opacity-75"
           >
-            Back to homepage
+            {t("404.back")}
           </span>
         </a>
         <a href="/" class="group relative hidden rounded dark:inline-block">
@@ -42,7 +41,7 @@ changeLanguage("en");
           <span
             class="relative inline-block rounded-full border-2 border-brand bg-base-200 px-8 py-3 text-center text-sm font-bold uppercase tracking-widest text-brand group-hover:translate-x-1 group-hover:translate-y-0.5 group-active:text-opacity-75"
           >
-            Back to homepage
+            {t("404.back")}
           </span>
         </a>
       </div>

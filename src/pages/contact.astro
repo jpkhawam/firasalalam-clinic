@@ -1,6 +1,5 @@
 ---
-import i18next, { t } from "i18next";
-import { Trans, HeadHrefLangs } from "astro-i18next/components";
+import { t } from "i18next";
 import { changeLanguage } from "i18next";
 import ContactForm from "../components/react/ContactForm";
 import Layout from "../layouts/Layout.astro";
@@ -13,27 +12,23 @@ changeLanguage("en");
     class="bg-gradient-to-b from-base-200 to-base-300"
     data-theme="fantasy"
   >
-    <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 gap-x-16 gap-y-8 xl:grid-cols-5">
-        <div class="lg:col-span-2 lg:py-12">
-          <p class="max-w-xl">
-            <p class="pb-2 text-lg">
-              You can contact me directly through various means. If you prefer a
-              traditional approach, feel free to give me a call at [phone
-              number]. The best time to contact me is Monday-Friday from 9am til
-              5pm.
-            </p>
-            <p class="pb-2 text-lg">
-              Alternatively, you can reach out to me via email at [email
-              address], or via Telegram or Whatsapp at +961 xx xxxxxx.
-            </p>
-            <p class="pb-2 text-lg">
-              If you prefer a more structured approach, I have also provided a
-              contact form on this page. You can fill out the form with your
-              details, including your preferred method of contact, and a brief
-              description of your concerns. Once submitted, the form will be
-              sent directly to me.
-            </p>
+    <div class="mx-auto max-w-screen-xl px-7 py-10 sm:px-6 lg:px-8 lg:py-16">
+      <div class="grid grid-cols-1 gap-y-8 xl:grid-cols-5 xl:gap-x-16">
+        <div
+          class="mx-auto w-full text-justify sm:w-3/5 xl:col-span-2 xl:mx-0 xl:w-full xl:py-12"
+        >
+          <p class="text-lg">
+            <span class="pb-2">
+              {t("contact.paragraph-1")}
+              <br /><br />
+            </span>
+            <span class="pb-2">
+              {t("contact.paragraph-2")}
+              <br /><br />
+            </span>
+            <span class="pb-2">
+              {t("contact.paragraph-3")}
+            </span>
           </p>
 
           <div class="mt-8">
@@ -42,7 +37,7 @@ changeLanguage("en");
             </a>
 
             <address class="mt-2 not-italic">
-              1234 Street address, Region goes here, Beirut
+              {t("contact.address")}
             </address>
           </div>
 

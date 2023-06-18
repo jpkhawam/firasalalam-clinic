@@ -21,20 +21,20 @@
       "clinic-details": "Clinic Details",
       "contact": {
         "phone": "Phone",
-        "Email": "Email",
-        "Telegram": "Telegram",
-        "Whatsapp": "Whatsapp"
+        "email": "Email",
+        "telegram": "Telegram",
+        "whatsapp": "Whatsapp"
       },
       "legal": {
         "title": "Legal",
         "work-permit": "Work Permit",
         "website-license": "Website License",
+        "license-details": "This website is licensed under the GPL-3.0 license",
         "website-source-code": "Website Source Code"
       }
     }
   },
   "404": {
-    "error": "Error",
     "sorry": "Sorry, this page does not exist.",
     "back": "Back to homepage"
   },
@@ -42,10 +42,10 @@
   "certificates": {},
   "clinical-approach": {},
   "contact": {
-    "paragraph-1": "",
-    "paragraph-2": "",
-    "paragraph-3": "",
-    "address": "",
+    "paragraph-1": "You can contact me directly through various means. If you prefer a traditional approach, feel free to give me a call at [phone number]. The best time to contact me is Monday-Friday from 9am til 5pm.",
+    "paragraph-2": "Alternatively, you can reach out to me via email at [email address], or via Telegram or Whatsapp at +961 xx xxxxxx.",
+    "paragraph-3": "If you prefer a more structured approach, I have also provided a contact form on this page. You can fill out the form with your details, including your preferred method of contact, and a brief description of your concerns. Once submitted, the form will be sent directly to me.",
+    "address": "1234 Street address, Region goes here, Beirut ",
     "contact-form": {}
   },
   "index": {
@@ -53,25 +53,55 @@
       "header-1": "Looking for a psychologist?",
       "header-2": "You're in the right place- Let's talk today.",
       "desc": "Get in contact with Dr. Firas Al Alam today",
-      "get-started": "Get Started"
+      "get-started": "Get Started",
+      "image-alt-text": "TODO: alt text needs to go here"
     },
     "Services": {
-      "title": "Services and Specialties"
+      "title": "Services and Specialties",
+      "learn-more": "Learn more",
+      "card-1": {
+        "text": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae unde pariatur."
+      },
+      "card-2": {
+        "text": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae unde pariatur eveniet non veniam eius molestiae ratione libero."
+      },
+      "card-3": {
+        "text": "Lorem, ipsum dolor sit amet consectetur adipisicing elit."
+      }
     },
     "FAQ": {
       "title-shorthand": "FAQ",
       "title": "Frequently Asked Questions",
-      "question-1": "",
-      "answer-1": "",
-      "question-2": "",
-      "answer-2": "",
-      "question-3": "",
-      "answer-3": "",
-      "question-4": "",
-      "answer-4": ""
+      "question-1": "Do you prescribe medication?",
+      "answer-1": "In illo sed omnis in. Saepe ut ut et eligendi id doloribus. Quo minima fugit nobis eos aliquam. Et dolor et alias necessitatibus corporis neque. Deleniti est earum ea dolor tempore et. Modi ipsa dicta tempore. Unde hic est pariatur minus quis expedita sapiente non. Velit corrupti consectetur voluptatem inventore eum quam voluptatibus. Amet itaque ipsam consequuntur. Minus ipsum mollitia esse. Optio quia nisi officia hic quas fuga. Nulla qui voluptas ut. Itaque accusamus repellat perferendis necessitatibus enim corrupti.",
+      "question-2": "How long does therapy last?",
+      "answer-2": "In illo sed omnis in. Saepe ut ut et eligendi id doloribus. Quo minima fugit nobis eos aliquam. Et dolor et alias necessitatibus corporis neque. Deleniti est earum ea dolor tempore et. Modi ipsa dicta tempore. Unde hic est pariatur minus quis expedita sapiente non. Velit corrupti consectetur voluptatem inventore eum quam voluptatibus. Amet itaque ipsam consequuntur. Minus ipsum mollitia esse. Optio quia nisi officia hic quas fuga. Nulla qui voluptas ut. Itaque accusamus repellat perferendis necessitatibus enim corrupti.",
+      "question-3": "What can I expect to achieve in therapy?",
+      "answer-3": "In illo sed omnis in. Saepe ut ut et eligendi id doloribus. Quo minima fugit nobis eos aliquam. Et dolor et alias necessitatibus corporis neque. Deleniti est earum ea dolor tempore et. Modi ipsa dicta tempore. Unde hic est pariatur minus quis expedita sapiente non. Velit corrupti consectetur voluptatem inventore eum quam voluptatibus. Amet itaque ipsam consequuntur. Minus ipsum mollitia esse. Optio quia nisi officia hic quas fuga. Nulla qui voluptas ut. Itaque accusamus repellat perferendis necessitatibus enim corrupti.",
+      "question-4": "Why don't you accept insurance?",
+      "answer-4": "In illo sed omnis in. Saepe ut ut et eligendi id doloribus. Quo minima fugit nobis eos aliquam. Et dolor et alias necessitatibus corporis neque. Deleniti est earum ea dolor tempore et. Modi ipsa dicta tempore. Unde hic est pariatur minus quis expedita sapiente non. Velit corrupti consectetur voluptatem inventore eum quam voluptatibus. Amet itaque ipsam consequuntur. Minus ipsum mollitia esse. Optio quia nisi officia hic quas fuga. Nulla qui voluptas ut. Itaque accusamus repellat perferendis necessitatibus enim corrupti."
     }
   },
-  "pricing": {},
+  "pricing": {
+    "short-title": "Pricing",
+    "header-title": "Transparent pricing from the start",
+    "title-description": "Distinctio et nulla eum soluta et neque labore quibusdam. Saepe et quasi iusto modi velit ut non voluptas in. Explicabo id ut laborum.",
+    "in-lebanon": "For individuals currently residing <0>in Lebanon</0>",
+    "out-lebanon": "For individuals currently residing <0>outside Lebanon</0>",
+    "general-fee": "General fee",
+    "student-fee": "Student fee",
+    "session": "session",
+    "month": "month",
+    "pricing-faq": "Pricing FAQ",
+    "question-1": "[PRICING] Do you prescribe medication?",
+    "answer-1": "In illo sed omnis in. Saepe ut ut et eligendi id doloribus. Quo minima fugit nobis eos aliquam. Et dolor et alias necessitatibus corporis neque. Deleniti est earum ea dolor tempore et. Modi ipsa dicta tempore. Unde hic est pariatur minus quis expedita sapiente non. Velit corrupti consectetur voluptatem inventore eum quam voluptatibus. Amet itaque ipsam consequuntur. Minus ipsum mollitia esse. Optio quia nisi officia hic quas fuga. Nulla qui voluptas ut. Itaque accusamus repellat perferendis necessitatibus enim corrupti.",
+    "question-2": "[PRICING] How long does therapy last?",
+    "answer-2": "In illo sed omnis in. Saepe ut ut et eligendi id doloribus. Quo minima fugit nobis eos aliquam. Et dolor et alias necessitatibus corporis neque. Deleniti est earum ea dolor tempore et. Modi ipsa dicta tempore. Unde hic est pariatur minus quis expedita sapiente non. Velit corrupti consectetur voluptatem inventore eum quam voluptatibus. Amet itaque ipsam consequuntur. Minus ipsum mollitia esse. Optio quia nisi officia hic quas fuga. Nulla qui voluptas ut. Itaque accusamus repellat perferendis necessitatibus enim corrupti.",
+    "question-3": "[PRICING] What can I expect to achieve in therapy?",
+    "answer-3": "In illo sed omnis in. Saepe ut ut et eligendi id doloribus. Quo minima fugit nobis eos aliquam. Et dolor et alias necessitatibus corporis neque. Deleniti est earum ea dolor tempore et. Modi ipsa dicta tempore. Unde hic est pariatur minus quis expedita sapiente non. Velit corrupti consectetur voluptatem inventore eum quam voluptatibus. Amet itaque ipsam consequuntur. Minus ipsum mollitia esse. Optio quia nisi officia hic quas fuga. Nulla qui voluptas ut. Itaque accusamus repellat perferendis necessitatibus enim corrupti.",
+    "question-4": "[PRICING] Why don't you accept insurance?",
+    "answer-4": "In illo sed omnis in. Saepe ut ut et eligendi id doloribus. Quo minima fugit nobis eos aliquam. Et dolor et alias necessitatibus corporis neque. Deleniti est earum ea dolor tempore et. Modi ipsa dicta tempore. Unde hic est pariatur minus quis expedita sapiente non. Velit corrupti consectetur voluptatem inventore eum quam voluptatibus. Amet itaque ipsam consequuntur. Minus ipsum mollitia esse. Optio quia nisi officia hic quas fuga. Nulla qui voluptas ut. Itaque accusamus repellat perferendis necessitatibus enim corrupti."
+  },
   "skills-building": {},
   "targeted-difficulties": {},
   "thanks": {
