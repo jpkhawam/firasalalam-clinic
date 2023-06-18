@@ -1,51 +1,75 @@
 ---
+import { t } from "i18next";
+import { Trans } from "astro-i18next/components";
 import Layout from "../layouts/Layout.astro";
+
+const frequentlyAskedQuestionsHTMLBlock = [];
+for (let i = 1; i <= 4; i++) {
+  frequentlyAskedQuestionsHTMLBlock.push(
+    `<div class="collapse-arrow rounded-box collapse my-2 bg-cream dark:bg-base-200">` +
+      `<input type="checkbox" class="peer w-full h-full" />` +
+      `<div class="collapse-title text-lg md:text-2xl font-medium"> ${t(
+        `pricing.question-${i}`
+      )} </div>` +
+      `<div class="collapse-content text-sm md:text-base">` +
+      `<p>${t(`pricing.answer-${i}`)}</p>` +
+      `</div>` +
+      `</div>`
+  );
+}
 ---
 
 <Layout title="Firas Al Alam | Pricing">
   <section
-    class="h-full bg-gradient-to-b from-cream to-white px-5 dark:bg-gradient-to-b dark:from-base-200 dark:to-base-200"
+    class="bg-gradient-to-b from-cream to-white px-5 dark:bg-gradient-to-b dark:from-base-200 dark:to-base-200"
   >
     <div class="flex flex-col items-center text-center">
       <div class="mt-3 text-lg font-semibold text-gray-800 dark:text-brand">
-        Pricing
+        {t("pricing.short-title")}
       </div>
       <div>
-        <h1 class="mb-5 mt-3 font-sans text-5xl font-black">
-          Transparent pricing from the start
+        <h1 class="mb-5 mt-3 font-sans text-3xl font-black md:text-5xl">
+          {t("pricing.header-title")}
         </h1>
       </div>
       <div class="max-w-prose">
-        Distinctio et nulla eum soluta et neque labore quibusdam. Saepe et quasi
-        iusto modi velit ut non voluptas in. Explicabo id ut laborum.
+        {t("pricing.title-description")}
       </div>
     </div>
     <main>
       <div
         class="mt-10 max-w-prose text-center text-xl font-black sm:max-w-none"
       >
-        For individuals currently residing
-        <span
-          class="underline decoration-gray-500 decoration-wavy dark:decoration-brand"
-          >in Lebanon</span
-        >
+        <Trans i18nKey="pricing.in-lebanon">
+          For individuals currently residing
+          <span
+            class="underline decoration-gray-500 decoration-wavy dark:decoration-brand"
+            >in Lebanon</span
+          >
+        </Trans>
       </div>
       <div
         class="mx-auto mt-4 flex w-full flex-col justify-center rounded-lg bg-base-300 px-3 py-5 text-center dark:rounded-3xl dark:bg-[#262830] sm:w-4/5 md:w-3/5 lg:w-3/5 lg:flex-row"
       >
         <div class="lg:w-2/5">
-          <div class="mb-7 text-xl font-bold">General fee</div>
+          <div class="mb-7 text-xl font-bold">{t("pricing.general-fee")}</div>
           <div>
             <span class="text-4xl font-black dark:text-brand">$50</span>
-            <span class="label-text-alt text-sm font-semibold">/session</span>
+            <span class="label-text-alt text-sm font-semibold"
+              >/{t("pricing.session")}</span
+            >
           </div>
           <div class="mt-3">
             <div class="[font-weight:500;]">
-              2 sessions<span class="label-text-alt text-sm">/month</span>
+              2 sessions<span class="label-text-alt text-sm"
+                >/{t("pricing.month")}</span
+              >
               {"->"} ${50 * 2}
             </div>
             <div class="[font-weight:500;]">
-              4 sessions<span class="label-text-alt text-sm">/month</span>
+              4 sessions<span class="label-text-alt text-sm"
+                >/{t("pricing.month")}</span
+              >
               {"->"} ${50 * 4}
             </div>
           </div>
@@ -53,18 +77,24 @@ import Layout from "../layouts/Layout.astro";
         <div class="divider divider-horizontal mx-5 hidden lg:flex"></div>
         <div class="divider divider-vertical mx-auto w-1/2 lg:hidden"></div>
         <div class="lg:w-2/5">
-          <div class="mb-7 text-xl font-bold">Student fee</div>
+          <div class="mb-7 text-xl font-bold">{t("pricing.student-fee")}</div>
           <div>
             <span class="text-4xl font-black dark:text-brand">$35</span>
-            <span class="label-text-alt text-sm font-semibold">/session</span>
+            <span class="label-text-alt text-sm font-semibold"
+              >/{t("pricing.session")}</span
+            >
           </div>
           <div class="mt-3">
             <div class="[font-weight:500;]">
-              2 sessions<span class="label-text-alt text-sm">/month</span>
+              2 sessions<span class="label-text-alt text-sm"
+                >/{t("pricing.month")}</span
+              >
               {"->"} ${35 * 2}
             </div>
             <div class="[font-weight:500;]">
-              4 sessions<span class="label-text-alt text-sm">/month</span>
+              4 sessions<span class="label-text-alt text-sm"
+                >/{t("pricing.month")}</span
+              >
               {"->"} ${35 * 4}
             </div>
           </div>
@@ -73,27 +103,36 @@ import Layout from "../layouts/Layout.astro";
       <div
         class="mt-8 max-w-prose text-center text-xl font-black sm:max-w-none"
       >
-        For individuals currently residing <span
-          class="underline decoration-gray-500 decoration-wavy dark:decoration-brand"
-          >outside Lebanon</span
-        >
+        <Trans i18nKey="pricing.out-lebanon">
+          For individuals currently residing
+          <span
+            class="underline decoration-gray-500 decoration-wavy dark:decoration-brand"
+            >outside Lebanon</span
+          >
+        </Trans>
       </div>
       <div
         class="mx-auto mt-4 flex w-full flex-col justify-center rounded-lg bg-base-300 px-3 py-5 text-center dark:rounded-3xl dark:bg-[#262830] sm:w-4/5 md:w-3/5 lg:w-3/5 lg:flex-row"
       >
         <div class="lg:w-2/5">
-          <div class="mb-7 text-xl font-bold">General fee</div>
+          <div class="mb-7 text-xl font-bold">{t("pricing.general-fee")}</div>
           <div>
             <span class="text-4xl font-black dark:text-brand">$65</span>
-            <span class="label-text-alt text-sm font-semibold">/session</span>
+            <span class="label-text-alt text-sm font-semibold"
+              >/{t("pricing.session")}</span
+            >
           </div>
           <div class="mt-3">
             <div class="[font-weight:500;]">
-              2 sessions<span class="label-text-alt text-sm">/month</span>
+              2 sessions<span class="label-text-alt text-sm"
+                >/{t("pricing.month")}</span
+              >
               {"->"} ${65 * 2}
             </div>
             <div class="[font-weight:500;]">
-              4 sessions<span class="label-text-alt text-sm">/month</span>
+              4 sessions<span class="label-text-alt text-sm"
+                >/{t("pricing.month")}</span
+              >
               {"->"} ${65 * 4}
             </div>
           </div>
@@ -101,18 +140,24 @@ import Layout from "../layouts/Layout.astro";
         <div class="divider divider-horizontal mx-5 hidden lg:flex"></div>
         <div class="divider divider-vertical mx-auto w-1/2 lg:hidden"></div>
         <div class="lg:w-2/5">
-          <div class="mb-7 text-xl font-bold">Student fee</div>
+          <div class="mb-7 text-xl font-bold">{t("pricing.student-fee")}</div>
           <div>
             <span class="text-4xl font-black dark:text-brand">$50</span>
-            <span class="label-text-alt text-sm font-semibold">/session</span>
+            <span class="label-text-alt text-sm font-semibold"
+              >/{t("pricing.session")}</span
+            >
           </div>
           <div class="mt-3">
             <div class="[font-weight:500;]">
-              2 sessions<span class="label-text-alt text-sm">/month</span>
+              2 sessions<span class="label-text-alt text-sm"
+                >/{t("pricing.month")}</span
+              >
               {"->"} ${50 * 2}
             </div>
             <div class="[font-weight:500;]">
-              4 sessions<span class="label-text-alt text-sm">/month</span>
+              4 sessions<span class="label-text-alt text-sm"
+                >/{t("pricing.month")}</span
+              >
               {"->"} ${50 * 4}
             </div>
           </div>
@@ -120,14 +165,16 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </main>
     <div class="divider divider-vertical mx-auto my-7 mt-10 w-2/3"></div>
-    <div class="mb-10 flex flex-col items-center text-center">
+    <div class="flex flex-col items-center pb-10 text-center">
       <div>
-        <h1 class="mb-5 mt-3 font-sans text-5xl font-black">Pricing FAQ</h1>
+        <h1 class="mb-5 mt-3 font-sans text-3xl font-black md:text-5xl">
+          {t("pricing.pricing-faq")}
+        </h1>
       </div>
-      <div class="max-w-prose">
-        Distinctio et nulla eum soluta et neque labore quibusdam. Saepe et quasi
-        iusto modi velit ut non voluptas in. Explicabo id ut laborum.
-      </div>
+      <div
+        class="mx-auto w-full text-start md:w-4/5 lg:w-3/5"
+        set:html={frequentlyAskedQuestionsHTMLBlock}
+      />
     </div>
   </section>
 </Layout>
