@@ -6,7 +6,7 @@ import Layout from "../layouts/Layout.astro";
 const frequentlyAskedQuestionsHTMLBlock = [];
 for (let i = 1; i <= 4; i++) {
   frequentlyAskedQuestionsHTMLBlock.push(
-    `<div class="collapse-arrow rounded-box collapse my-2 bg-cream dark:bg-base-200">` +
+    `<div class="collapse-arrow rounded-box collapse my-2 bg-transparent">` +
       `<input type="checkbox" class="peer w-full h-full" />` +
       `<div class="collapse-title text-lg md:text-2xl font-medium"> ${t(
         `pricing.question-${i}`
