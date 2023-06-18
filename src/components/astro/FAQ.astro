@@ -6,10 +6,10 @@ for (let i = 1; i <= 4; i++) {
   frequentlyAskedQuestionsHTMLBlock.push(
     `<div class="collapse-arrow rounded-box collapse my-2 bg-cream dark:bg-base-200">` +
       `<input type="checkbox" class="peer w-full h-full" />` +
-      `<div class="collapse-title text-2xl font-medium"> ${t(
+      `<div class="collapse-title text-lg md:text-2xl font-medium"> ${t(
         `index.FAQ.question-${i}`
       )} </div>` +
-      `<div class="collapse-content">` +
+      `<div class="collapse-content text-sm md:text-base">` +
       `<p>${t(`index.FAQ.answer-${i}`)}</p>` +
       `</div>` +
       `</div>`
@@ -23,7 +23,7 @@ for (let i = 1; i <= 4; i++) {
   >
     {t("index.FAQ.title-shorthand")}
   </h2>
-  <h2 class="pb-1 text-center text-4xl font-black">
+  <h2 class="pb-1 text-center text-3xl md:text-4xl font-black">
     {t("index.FAQ.title")}
   </h2>
   <div set:html={frequentlyAskedQuestionsHTMLBlock} />
