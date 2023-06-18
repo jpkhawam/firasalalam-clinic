@@ -1,4 +1,5 @@
 ---
+import { t } from "i18next";
 import LanguageSwitcher from "./LanguageSwitcher.astro";
 ---
 
@@ -16,7 +17,7 @@ import LanguageSwitcher from "./LanguageSwitcher.astro";
     </div>
 
     <div class="mt-8 font-sans text-2xl font-black dark:text-white">
-      Firas Al Alam
+      {t("shared.name")}
     </div>
     <div
       class="mb-0 mt-8 flex flex-col items-center justify-center gap-x-5 gap-y-3 sm:flex-row"
@@ -54,43 +55,45 @@ import LanguageSwitcher from "./LanguageSwitcher.astro";
     <div class="mt-8 flex flex-col justify-center text-lg dark:text-white">
       <div>
         <div class="cursor-pointer hover:underline">
-          <a href="/about">About me</a>
+          <a href="/about">{t("shared.pages.about-me")}</a>
         </div>
         <div class="divider divider-vertical"></div>
       </div>
       <div>
         <div class="cursor-pointer hover:underline">
-          <a href="/certificates"> Certificates</a>
+          <a href="/certificates">{t("shared.pages.certificates")}</a>
         </div>
         <div class="divider divider-vertical"></div>
       </div>
       <div>
         <div class="cursor-pointer hover:underline">
-          <a href="/clinical-approach">Clinical Approach</a>
+          <a href="/clinical-approach">{t("shared.pages.clinical-approach")}</a>
         </div>
         <div class="divider divider-vertical"></div>
       </div>
       <div>
         <div class="cursor-pointer hover:underline">
-          <a href="/targeted-difficulties">Targeted Difficulties</a>
+          <a href="/targeted-difficulties"
+            >{t("shared.pages.targeted-difficulties")}</a
+          >
         </div>
         <div class="divider divider-vertical"></div>
       </div>
       <div>
         <div class="cursor-pointer hover:underline">
-          <a href="/skills-building">Skills Building</a>
+          <a href="/skills-building">{t("shared.pages.skills-building")}</a>
         </div>
         <div class="divider divider-vertical"></div>
       </div>
       <div>
         <div class="cursor-pointer hover:underline">
-          <a href="/pricing">Pricing</a>
+          <a href="/pricing">{t("shared.pages.pricing")}</a>
         </div>
         <div class="divider divider-vertical"></div>
       </div>
       <div>
         <div class="cursor-pointer hover:underline">
-          <a href="/contact">Contact</a>
+          <a href="/contact">{t("shared.pages.contact")}</a>
         </div>
         <div class="divider divider-vertical w-full"></div>
       </div>

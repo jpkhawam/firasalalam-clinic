@@ -1,5 +1,6 @@
 ---
 import i18next from "i18next";
+import { HeadHrefLangs } from "astro-i18next/components";
 import Drawer from "../components/astro/Drawer.astro";
 import Footer from "../components/astro/Footer.astro";
 import NavBar from "../components/astro/NavBar.astro";
@@ -66,6 +67,7 @@ const { title } = Astro.props;
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     <title>{title}</title>
+    <HeadHrefLangs />
   </head>
   <body
     class="hide-scrollbars flex h-screen flex-col justify-between selection:bg-gray-950 selection:text-white dark:text-slate-50 selection:dark:bg-brand selection:dark:text-black"
@@ -84,18 +86,17 @@ const { title } = Astro.props;
       </div>
       <Drawer />
     </div>
+    <style>
+      /* Hide scrollbar for Chrome, Safari and Opera */
+      .hide-scrollbars::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Hide scrollbar for IE, Edge and Firefox */
+      .hide-scrollbars {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+    </style>
   </body>
 </html>
-
-<style>
-  /* Hide scrollbar for Chrome, Safari and Opera */
-  .hide-scrollbars::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* Hide scrollbar for IE, Edge and Firefox */
-  .hide-scrollbars {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
-</style>

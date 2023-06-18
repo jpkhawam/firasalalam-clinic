@@ -1,30 +1,16 @@
 ---
-const frequentlyAskedQuestions = new Map<string, string>();
-frequentlyAskedQuestions.set(
-  "Do you prescribe medication?",
-  "In illo sed omnis in. Saepe ut ut et eligendi id doloribus. Quo minima fugit nobis eos aliquam. Et dolor et alias necessitatibus corporis neque. Deleniti est earum ea dolor tempore et. Modi ipsa dicta tempore. Unde hic est pariatur minus quis expedita sapiente non. Velit corrupti consectetur voluptatem inventore eum quam voluptatibus. Amet itaque ipsam consequuntur. Minus ipsum mollitia esse. Optio quia nisi officia hic quas fuga. Nulla qui voluptas ut. Itaque accusamus repellat perferendis necessitatibus enim corrupti."
-);
-frequentlyAskedQuestions.set(
-  "How long does therapy last?",
-  "In illo sed omnis in. Saepe ut ut et eligendi id doloribus. Quo minima fugit nobis eos aliquam. Et dolor et alias necessitatibus corporis neque. Deleniti est earum ea dolor tempore et. Modi ipsa dicta tempore. Unde hic est pariatur minus quis expedita sapiente non. Velit corrupti consectetur voluptatem inventore eum quam voluptatibus. Amet itaque ipsam consequuntur. Minus ipsum mollitia esse. Optio quia nisi officia hic quas fuga. Nulla qui voluptas ut. Itaque accusamus repellat perferendis necessitatibus enim corrupti."
-);
-frequentlyAskedQuestions.set(
-  "What can I expect to achieve in therapy?",
-  "In illo sed omnis in. Saepe ut ut et eligendi id doloribus. Quo minima fugit nobis eos aliquam. Et dolor et alias necessitatibus corporis neque. Deleniti est earum ea dolor tempore et. Modi ipsa dicta tempore. Unde hic est pariatur minus quis expedita sapiente non. Velit corrupti consectetur voluptatem inventore eum quam voluptatibus. Amet itaque ipsam consequuntur. Minus ipsum mollitia esse. Optio quia nisi officia hic quas fuga. Nulla qui voluptas ut. Itaque accusamus repellat perferendis necessitatibus enim corrupti."
-);
-frequentlyAskedQuestions.set(
-  "Why don't you accept insurance?",
-  "In illo sed omnis in. Saepe ut ut et eligendi id doloribus. Quo minima fugit nobis eos aliquam. Et dolor et alias necessitatibus corporis neque. Deleniti est earum ea dolor tempore et. Modi ipsa dicta tempore. Unde hic est pariatur minus quis expedita sapiente non. Velit corrupti consectetur voluptatem inventore eum quam voluptatibus. Amet itaque ipsam consequuntur. Minus ipsum mollitia esse. Optio quia nisi officia hic quas fuga. Nulla qui voluptas ut. Itaque accusamus repellat perferendis necessitatibus enim corrupti."
-);
+import { t } from "i18next";
 
 const frequentlyAskedQuestionsHTMLBlock = [];
-for (const [question, answer] of frequentlyAskedQuestions) {
+for (let i = 1; i <= 4; i++) {
   frequentlyAskedQuestionsHTMLBlock.push(
     `<div class="collapse-arrow rounded-box collapse my-2 bg-cream dark:bg-base-200">` +
       `<input type="checkbox" class="peer w-full h-full" />` +
-      `<div class="collapse-title text-2xl font-medium"> ${question} </div>` +
+      `<div class="collapse-title text-2xl font-medium"> ${t(
+        `index.FAQ.question-${i}`
+      )} </div>` +
       `<div class="collapse-content">` +
-      `<p>${answer}</p>` +
+      `<p>${t(`index.FAQ.answer-${i}`)}</p>` +
       `</div>` +
       `</div>`
   );
@@ -35,10 +21,10 @@ for (const [question, answer] of frequentlyAskedQuestions) {
   <h2
     class="pb-2 text-center text-xl text-gray-800 [font-weight:500;] dark:text-brand"
   >
-    FAQ
+    {t("index.FAQ.title-shorthand")}
   </h2>
   <h2 class="pb-1 text-center text-4xl font-black">
-    Frequently Asked Questions
+    {t("index.FAQ.title")}
   </h2>
   <div set:html={frequentlyAskedQuestionsHTMLBlock} />
 </div>

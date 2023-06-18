@@ -1,59 +1,75 @@
+---
+import { t } from "i18next";
+---
+
 <footer class="footer bg-base-200 p-10 text-base-content dark:bg-[#3A3F4C]">
   <div>
     <p class="text-xl font-black dark:text-white">
-      Firas Al Alam<br />MA Clinical Psychology
+      {t("shared.name")}<br />{t("site.Footer.title")}
     </p>
-    <p class="">1234 Street address<br />Region goes here, Beirut</p>
+    <p class="">
+      {t("site.Footer.address-1")}<br />{t("site.Footer.address-2")}
+    </p>
   </div>
   <div>
-    <span class="footer-title">Navigation</span>
-    <a href="/" class="link-hover link">Home page</a>
-    <a href="/contact" class="link-hover link">Contact</a>
-    <a href="/about" class="link-hover link">About Me</a>
-    <a href="/certificates" class="link-hover link">Certificates</a>
-  </div>
-  <div>
-    <span class="footer-title">Clinic Details</span>
-    <a href="/clinical-approach" class="link-hover link">Clinical Approach</a>
-    <a href="/skills-building" class="link-hover link">Skills Building</a>
-    <a href="/targeted-difficulties" class="link-hover link"
-      >Targeted Difficulties</a
+    <span class="footer-title">{t("site.Footer.navigation")}</span>
+    <a href="/" class="link-hover link">{t("shared.pages.home-page")}</a>
+    <a href="/contact" class="link-hover link">{t("shared.pages.contact")}</a>
+    <a href="/about" class="link-hover link">{t("shared.pages.about-me")}</a>
+    <a href="/certificates" class="link-hover link"
+      >{t("shared.pages.certificates")}</a
     >
-    <a href="/pricing" class="link-hover link">Pricing</a>
   </div>
   <div>
-    <span class="footer-title">Contact</span>
+    <span class="footer-title">{t("site.Footer.clinic-details")}</span>
+    <a href="/clinical-approach" class="link-hover link"
+      >{t("shared.pages.clinical-approach")}</a
+    >
+    <a href="/skills-building" class="link-hover link"
+      >{t("shared.pages.skills-building")}</a
+    >
+    <a href="/targeted-difficulties" class="link-hover link"
+      >{t("shared.pages.targeted-difficulties")}</a
+    >
+    <a href="/pricing" class="link-hover link">{t("shared.pages.pricing")}</a>
+  </div>
+  <div>
+    <span class="footer-title">{t("shared.pages.contact")}</span>
     <!-- TODO: add phone number -->
-    <a class="link-hover link">Phone</a>
-    <a href="mailto:contact@firasalalam.clinic" class="link-hover link">Email</a
+    <a class="link-hover link">{t("site.Footer.contact.phone")}</a>
+    <a href="mailto:contact@firasalalam.clinic" class="link-hover link"
+      >{t("site.Footer.contact.email")}</a
     >
     <!-- TODO: add Telegram and whatsapp -->
-    <a class="link-hover link">Telegram</a>
-    <a class="link-hover link">Whatsapp</a>
+    <a class="link-hover link">{t("site.Footer.contact.telegram")}</a>
+    <a class="link-hover link">{t("site.Footer.contact.whatsapp")}</a>
   </div>
   <div>
-    <span class="footer-title">Legal</span>
+    <span class="footer-title">{t("site.Footer.legal.title")}</span>
     <!-- TODO: add work permit -->
-    <a class="link-hover link" target="_blank">Work Permit</a>
+    <a class="link-hover link" target="_blank"
+      >{t("site.Footer.legal.work-permit")}</a
+    >
     <div
       class="tooltip"
       style={{
         "--tooltip-color": "#dfdfdf",
         "--tooltip-text-color": "#000",
       }}
-      data-tip="This website is licensed under the GPL-3.0 license"
+      data-tip={t("site.Footer.legal.license-details")}
     >
       <a
         class="link-hover link"
         target="_blank"
-        href="https://www.gnu.org/licenses/gpl-3.0.en.html">Website License</a
+        href="https://www.gnu.org/licenses/gpl-3.0.en.html"
+        >{t("site.Footer.legal.website-license")}</a
       >
     </div>
     <a
       class="link-hover link"
       target="_blank"
       href="https://github.com/jpkhawam/firasalalam-clinic"
-      >Website Source Code</a
+      >{t("site.Footer.legal.website-source-code")}</a
     >
   </div>
 </footer>

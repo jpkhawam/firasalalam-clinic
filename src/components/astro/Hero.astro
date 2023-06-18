@@ -1,6 +1,5 @@
 ---
-import i18next, { t } from "i18next";
-import { Trans, HeadHrefLangs } from "astro-i18next/components";
+import { t } from "i18next";
 import { Picture } from "@astrojs/image/components";
 ---
 
@@ -16,14 +15,14 @@ import { Picture } from "@astrojs/image/components";
       class="mt-5 max-w-sm rounded-sm shadow-2xl dark:rounded-lg lg:mt-0"
       widths={[400, 800, 1200]}
       aspectRatio="2:3"
-      alt="TODO: alt text needs to go here"
+      alt={t("index.Hero.image-alt-text")}
     />
     <div class="text-center md:text-start">
-      <h1 class="mb-2 text-2xl font-semibold">Looking for a psychologist?</h1>
+      <h1 class="mb-2 text-2xl font-semibold">{t("index.Hero.header-1")}</h1>
       <h1 class="text-4xl font-bold md:text-5xl">
-        You're in the right place- Let's talk today.
+        {t("index.Hero.header-2")}
       </h1>
-      <p class="py-6 text-lg">Get in contact with Dr. Firas Al Alam today</p>
+      <p class="py-6 text-lg">{t("index.Hero.desc")}</p>
       <a href="/contact/" class="group relative inline-block dark:hidden">
         <span
           class="absolute inset-0 translate-x-1.5 translate-y-1.5 bg-black transition-transform group-hover:translate-x-0 group-hover:translate-y-0"
@@ -32,7 +31,7 @@ import { Picture } from "@astrojs/image/components";
         <span
           class="relative inline-block border-2 border-black px-8 py-3 text-sm font-bold uppercase tracking-widest text-white group-active:text-opacity-75"
         >
-          Get Started
+          {t("index.Hero.get-started")}
         </span>
       </a>
       <a
@@ -46,7 +45,7 @@ import { Picture } from "@astrojs/image/components";
         <span
           class="relative inline-block rounded-full border-2 border-brand bg-[#2B303B] px-8 py-3 text-center text-sm font-bold uppercase tracking-widest text-brand group-hover:translate-x-1 group-hover:translate-y-0.5 group-active:text-opacity-75 lg:bg-[#1E212A]"
         >
-          Get Started
+          {t("index.Hero.get-started")}
         </span>
       </a>
     </div>

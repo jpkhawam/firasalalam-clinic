@@ -1,4 +1,6 @@
 ---
+import { t } from "i18next";
+
 const card = [
   "flex",
   "flex-col",
@@ -84,7 +86,9 @@ const modalBox = [
 ---
 
 <div class="mt-10 justify-items-center py-10 dark:bg-[#1B1E26]">
-  <h2 class="pb-1 text-center text-4xl font-black">Services and Specialties</h2>
+  <h2 class="pb-1 text-center text-4xl font-black">
+    {t("index.Services.title")}
+  </h2>
   <div>
     <svg
       viewBox="0 0 24 24"
@@ -108,10 +112,11 @@ const modalBox = [
         <div class:list={card} onclick="service_card_modal_1.showModal()">
           <div class="mb-5">
             <h2 class:list={cardHeaderText}>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Recusandae unde pariatur.
+              {t("index.Services.card-1.text")}
             </h2>
-            <span class:list={cardLearnMore}>Learn more</span>
+            <span class:list={cardLearnMore}
+              >{t("index.Services.learn-more")}</span
+            >
           </div>
           <!-- <div class:list={cardSvg}>
             <object
@@ -130,11 +135,11 @@ const modalBox = [
         <div class:list={card} onclick="service_card_modal_2.showModal()">
           <div class="mb-5">
             <h2 class:list={cardHeaderText}>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Recusandae unde pariatur eveniet non veniam eius molestiae ratione
-              libero.
+              {t("index.Services.card-2.text")}
             </h2>
-            <span class:list={cardLearnMore}>Learn more</span>
+            <span class:list={cardLearnMore}
+              >{t("index.Services.learn-more")}</span
+            >
           </div>
           <!-- <div class:list={cardSvg}>
             <object
@@ -153,9 +158,11 @@ const modalBox = [
         <div class:list={card} onclick="service_card_modal_3.showModal()">
           <div class="mb-5">
             <h2 class:list={cardHeaderText}>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              {t("index.Services.card-3.text")}
             </h2>
-            <span class:list={cardLearnMore}>Learn more</span>
+            <span class:list={cardLearnMore}
+              >{t("index.Services.learn-more")}</span
+            >
           </div>
           <!-- <div class:list={cardSvg}>
             <object
