@@ -2,6 +2,7 @@ import { useState } from "react";
 
 export default function ContactForm() {
   const [selectedPerson, setSelectedPerson] = useState("Myself");
+  const [emailInputValue, setEmailInputValue] = useState("");
   const [selectedCommunicationMethod, setSelectedCommunicationMethod] =
     useState("none");
   const inputClassList =
@@ -23,7 +24,7 @@ export default function ContactForm() {
           id="email-subject"
           type="hidden"
           name="_subject"
-          value="New submission on firasalalam.clinic from "
+          value={`New submission from ${emailInputValue}`}
         />
         <input type="hidden" name="_captcha" value="false" />
         <input type="text" name="_honey" style={{ display: "none" }} />
@@ -34,7 +35,7 @@ export default function ContactForm() {
               <span className="label-text text-black">I am here for</span>
             </label>
             <select
-              className="select-primary select w-72 max-w-6xl border-opacity-20 font-normal focus:outline-none focus:ring-0 focus:ring-offset-0"
+              className="select-primary select w-full max-w-6xl border-opacity-20 font-normal focus:outline-none focus:ring-0 focus:ring-offset-0"
               name="I am here for"
               value={selectedPerson}
               onChange={(e) => {
@@ -103,7 +104,7 @@ export default function ContactForm() {
                   <span className="label-text text-black">Gender</span>
                 </label>
                 <select
-                  className="select-primary select w-72 max-w-6xl border-opacity-20 font-normal focus:outline-none focus:ring-0 focus:ring-offset-0"
+                  className="select-primary select w-full max-w-6xl border-opacity-20 font-normal focus:outline-none focus:ring-0 focus:ring-offset-0"
                   name="I identify as a"
                   defaultValue={0}
                 >
@@ -159,13 +160,20 @@ export default function ContactForm() {
                   id="email"
                   name="email"
                   required={true}
+                  value={emailInputValue}
+                  onChange={(e) => {
+                    setEmailInputValue(e.target.value);
+                  }}
                 />
               </div>
 
               <div>
                 <label className="label">
                   <span className="label-text text-black">
-                    Phone Number (Include country code)
+                    Phone Number{" "}
+                    <span className="label-text-alt italic">
+                      (Include country code)
+                    </span>
                   </span>
                 </label>
                 <input
@@ -184,7 +192,7 @@ export default function ContactForm() {
                   </span>
                 </label>
                 <select
-                  className="select-primary select w-72 max-w-6xl border-opacity-20 font-normal focus:outline-none focus:ring-0 focus:ring-offset-0"
+                  className="select-primary select w-full max-w-6xl border-opacity-20 font-normal focus:outline-none focus:ring-0 focus:ring-offset-0"
                   name="Preffered communication method"
                   value={selectedCommunicationMethod}
                   onChange={(e) => {
@@ -228,7 +236,7 @@ export default function ContactForm() {
               className="divider divider-vertical mx-auto w-4/5"
               aria-hidden={true}
             ></div>
-            <div className="text-center">
+            <div className="text-center text-sm font-bold sm:text-base">
               Please fill this section with{" "}
               <span className="underline"> your personal information.</span>{" "}
             </div>
@@ -264,7 +272,7 @@ export default function ContactForm() {
                   <span className="label-text text-black">Gender</span>
                 </label>
                 <select
-                  className="select-primary select w-72 max-w-6xl border-opacity-20 font-normal focus:outline-none focus:ring-0 focus:ring-offset-0"
+                  className="select-primary select w-full max-w-6xl border-opacity-20 font-normal focus:outline-none focus:ring-0 focus:ring-offset-0"
                   name="I identify as a"
                   defaultValue={0}
                 >
@@ -314,7 +322,10 @@ export default function ContactForm() {
               <div>
                 <label className="label">
                   <span className="label-text text-black">
-                    Phone Number (Include country code)
+                    Phone Number{" "}
+                    <span className="label-text-alt italic">
+                      (Include country code)
+                    </span>
                   </span>
                 </label>
                 <input
@@ -333,7 +344,7 @@ export default function ContactForm() {
                   </span>
                 </label>
                 <select
-                  className="select-primary select w-72 max-w-6xl border-opacity-20 font-normal focus:outline-none focus:ring-0 focus:ring-offset-0"
+                  className="select-primary select w-full max-w-6xl border-opacity-20 font-normal focus:outline-none focus:ring-0 focus:ring-offset-0"
                   name="Preffered communication method"
                   value={selectedCommunicationMethod}
                   onChange={(e) => {
@@ -374,7 +385,7 @@ export default function ContactForm() {
               aria-hidden={true}
             ></div>
 
-            <div className="text-center">
+            <div className="text-center text-sm font-bold sm:text-base">
               Please fill this section with the information of{" "}
               <span className="underline">the person you are here for.</span>
             </div>
@@ -410,7 +421,7 @@ export default function ContactForm() {
                   <span className="label-text text-black">Gender</span>
                 </label>
                 <select
-                  className="select-primary select w-72 max-w-6xl border-opacity-20 font-normal focus:outline-none focus:ring-0 focus:ring-offset-0"
+                  className="select-primary select w-full max-w-6xl border-opacity-20 font-normal focus:outline-none focus:ring-0 focus:ring-offset-0"
                   name="Patient identifies as a"
                   defaultValue={0}
                 >
@@ -583,8 +594,11 @@ function getModalsHTMLBlock(): JSX.Element[] {
           <button className="btn-ghost btn-sm btn-circle btn absolute right-3 top-3">
             ✕
           </button>
-          <h3 className="text-lg font-bold">{symptom}</h3>
-          <p className="py-4">{desc}</p>
+          <h3 className="mt-5 text-lg font-bold">{symptom}</h3>
+          <p className="mb-2 py-4">{desc}</p>
+        </form>
+        <form method="dialog" className="modal-backdrop">
+          <button>close</button>
         </form>
       </dialog>
     );
