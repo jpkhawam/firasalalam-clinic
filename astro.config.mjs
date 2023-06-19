@@ -26,7 +26,10 @@ export default defineConfig({
       {
         filter: (page) =>
           page !== "https://firasalalam.clinic/thanks" &&
-          page !== "https://firasalalam.clinic/404",
+          page !== "https://firasalalam.clinic/404" &&
+          page !== "https://firasalalam.clinic/certificates" &&
+          page !== "https://firasalalam.clinic/skills-building" &&
+          page !== "https://firasalalam.clinic/targeted-difficulties",
       }
     ),
     react(),

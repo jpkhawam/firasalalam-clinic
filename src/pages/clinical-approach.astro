@@ -1,0 +1,12 @@
+---
+import { t } from "i18next";
+import { changeLanguage } from "i18next";
+import Layout from "../layouts/Layout.astro";
+
+changeLanguage("en");
+---
+
+<Layout
+    title="Clinical Approach"
+    description={t("seo.descriptions.clinical-approach")}
+/>
