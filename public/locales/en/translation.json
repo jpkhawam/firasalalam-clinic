@@ -1,4 +1,13 @@
 {
+  "seo": {
+    "descriptions": {
+      "index": "Firas Al Alam is a licensed psychologist specializing in the management of ADHD symptoms and associated difficulties, including problems of inattention, memory, emotion regulation, planning and organization.",
+      "about": "Read more about who I am and my professional background.",
+      "clinical-approach": "I adopt a person-centered framework and use CBT techniques personalized for each client.",
+      "contact": "Contact me for more information or to book your online session now.",
+      "pricing": "Transparent pricing adapted to your financial situation."
+    }
+  },
   "shared": {
     "pages": {
       "home-page": "Home page",

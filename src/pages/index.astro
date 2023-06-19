@@ -1,4 +1,5 @@
 ---
+import { t } from "i18next";
 import { changeLanguage } from "i18next";
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/astro/Hero.astro";
@@ -8,7 +9,7 @@ import Services from "../components/astro/Services.astro";
 changeLanguage("en");
 ---
 
-<Layout title="Firas Al Alam">
+<Layout title="Clinic" description={t("seo.descriptions.index")}>
   <main class="bg-cream dark:bg-base-200">
     <Hero />
     <Services />
