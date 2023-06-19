@@ -148,7 +148,8 @@ const { title, description } = Astro.props;
         <NavBar />
         <div class="bg-warning px-4 py-3 text-black">
           <p class="text-center text-lg font-medium">
-            ‼️ This website is under development ‼️
+            This website is under development, you can book an appointment
+            starting September 2023
           </p>
         </div>
         <slot />
@@ -156,6 +157,18 @@ const { title, description } = Astro.props;
       </div>
       <Drawer />
     </div>
+    <dialog id="my_modal_1" class="modal">
+      <form method="dialog" class="modal-box dark:bg-slate-200 dark:text-black">
+        <h3 class="font-bold text-lg">Heads up!</h3>
+        <p class="py-4">
+          This website is still under development. You can return to book an
+          appointment or to learn more about the clinic starting September 2023.
+        </p>
+        <div class="modal-action justify-center">
+          <button class="btn btn-neutral text-white">Got it!</button>
+        </div>
+      </form>
+    </dialog>
     <style>
       /* Hide scrollbar for Chrome, Safari and Opera */
       .hide-scrollbars::-webkit-scrollbar {
@@ -168,5 +181,8 @@ const { title, description } = Astro.props;
         scrollbar-width: none; /* Firefox */
       }
     </style>
+    <script>
+      my_modal_1.showModal();
+    </script>
   </body>
 </html>
