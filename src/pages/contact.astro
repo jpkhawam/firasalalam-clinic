@@ -12,12 +12,12 @@ changeLanguage("en");
     class="bg-gradient-to-b from-base-200 to-base-300"
     data-theme="fantasy"
   >
-    <div class="mx-auto max-w-screen-xl sm:px-6 py-10 lg:px-8 lg:py-16">
+    <div class="mx-auto max-w-screen-xl py-10 sm:px-6 lg:px-8 lg:py-16">
       <div class="grid grid-cols-1 gap-y-8 xl:grid-cols-5 xl:gap-x-16">
         <div
           class="mx-auto w-full text-justify sm:w-3/5 xl:col-span-2 xl:mx-0 xl:w-full xl:py-12"
         >
-          <p class="text-lg px-6 sm:px-0">
+          <p class="px-6 text-lg sm:px-0">
             <span class="pb-2">
               {t("contact.paragraph-1")}
               <br /><br />
@@ -35,7 +35,7 @@ changeLanguage("en");
         </div>
 
         <div
-          class="sm:rounded-lg bg-white p-8 text-black shadow-lg lg:col-span-3 lg:p-12"
+          class="bg-white p-8 text-black shadow-lg sm:rounded-lg lg:col-span-3 lg:p-12"
         >
           <ContactForm client:load />
         </div>

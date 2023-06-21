@@ -511,7 +511,7 @@ export default function ContactForm() {
           </div>
           <div className="mt-4">
             <button
-              className="me-12 inset-0 border-2 border-black bg-black px-8 py-3 text-sm uppercase tracking-widest text-white transition-colors duration-300 [font-weight:800;] hover:bg-white hover:text-black"
+              className="inset-0 me-12 border-2 border-black bg-black px-8 py-3 text-sm uppercase tracking-widest text-white transition-colors duration-300 [font-weight:800;] hover:bg-white hover:text-black"
               onClick={() => {
                 const hiddenInput = document.getElementById(
                   "email-subject"
@@ -524,9 +524,7 @@ export default function ContactForm() {
               type="submit"
               id="submit-button"
             >
-             
-                Submit
-          
+              Submit
             </button>
           </div>
         </div>
