@@ -1,9 +1,131 @@
 ---
 import { t } from "i18next";
 import { changeLanguage } from "i18next";
+import { Picture } from "@astrojs/image/components";
 import Layout from "../layouts/Layout.astro";
 
 changeLanguage("en");
 ---
 
-<Layout title="Skills Building" description="" />
+<Layout title="Skills Building" description="">
+  <section
+    class="bg-gradient-to-b from-cream to-white px-0 dark:from-base-200 dark:to-base-200"
+  >
+    <div class="flex flex-col text-center">
+      <div>
+        <h1 class="my-5 font-sans text-3xl font-black md:text-5xl">
+          Skills Building
+        </h1>
+      </div>
+    </div>
+    <div class="hero">
+      <div class="hero-content flex-col-reverse lg:flex-row-reverse">
+        <Picture
+          src="/svg/undraw_designer.svg"
+          class="mt-5 hidden max-w-sm dark:rounded-lg dark:bg-[#f4f4f4] lg:mt-0 lg:inline-block"
+          widths={[400, 800, 1200]}
+          aspectRatio="1:1"
+          alt="TODO:"
+        />
+        <div class="mx-5 max-w-prose text-center font-sans md:text-start">
+          <p class="py-6 text-lg md:text-xl">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem quis
+            repellendus, explicabo ipsum, quas voluptas rerum repudiandae quo,
+            aspernatur consequuntur eum praesentium pariatur cupiditate
+            assumenda in omnis! Esse, rem doloribus!
+          </p>
+          <p class="py-6 text-lg md:text-xl">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem quis
+            repellendus, explicabo ipsum, quas voluptas rerum repudiandae quo,
+            aspernatur consequuntur eum praesentium pariatur cupiditate
+            assumenda in omnis! Esse, rem doloribus!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="mt-5 bg-[#424242] py-10 ps-14 text-center font-sans text-2xl font-black uppercase tracking-wide text-white dark:bg-[#3A3F4C] sm:text-start sm:text-3xl"
+    >
+      1- WHAT IS HEADER ONE?
+    </div>
+    <div
+      class="my-10 flex justify-evenly px-10 lg:flex-row-reverse lg:gap-x-10"
+    >
+      <p
+        class="my-auto max-w-prose text-justify font-sans text-lg tracking-wide"
+      >
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed labore
+        dolore modi maxime at consectetur sint ratione ullam obcaecati, quasi
+        magnam voluptatibus placeat enim. Consequatur dolorum dolore expedita
+        sapiente adipisci. Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Architecto officia, magnam harum consequatur consectetur eaque sed
+        error alias, aliquid necessitatibus ut nesciunt laboriosam perspiciatis
+        adipisci unde officiis fugiat nostrum dolores.
+      </p>
+
+      <Picture
+        src="/svg/undraw_freelancer.svg"
+        class="hidden max-w-md py-10 dark:rounded-3xl dark:bg-white lg:inline-flex"
+        widths={[400, 800, 1200]}
+        aspectRatio="2:1"
+        alt="TODO:"
+      />
+    </div>
+
+    <div
+      class="mt-5 bg-[#424242] py-10 ps-14 text-center font-sans text-2xl font-black uppercase tracking-wide text-white dark:bg-[#3A3F4C] sm:text-start sm:text-3xl"
+    >
+      2- WHAT IS HEADER TWO?
+    </div>
+    <div class="my-10 flex justify-evenly px-10 lg:flex-row lg:gap-x-10">
+      <p
+        class="my-auto max-w-prose text-justify font-sans text-lg tracking-wide"
+      >
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed labore
+        dolore modi maxime at consectetur sint ratione ullam obcaecati, quasi
+        magnam voluptatibus placeat enim. Consequatur dolorum dolore expedita
+        sapiente adipisci. Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Architecto officia, magnam harum consequatur consectetur eaque sed
+        error alias, aliquid necessitatibus ut nesciunt laboriosam perspiciatis
+        adipisci unde officiis fugiat nostrum dolores.
+      </p>
+
+      <Picture
+        src="/svg/undraw_code_thinking.svg"
+        class="hidden max-w-md py-10 dark:rounded-3xl dark:bg-white lg:inline-flex"
+        widths={[400, 800, 1200]}
+        aspectRatio="2:1"
+        alt="TODO:"
+      />
+    </div>
+    <div
+      class="mt-5 bg-[#424242] py-10 ps-14 text-center font-sans text-2xl font-black uppercase tracking-wide text-white dark:bg-[#3A3F4C] sm:text-start sm:text-3xl"
+    >
+      3- WHAT IS HEADER THREE?
+    </div>
+    <div
+      class="my-10 flex justify-evenly px-10 lg:flex-row-reverse lg:gap-x-10"
+    >
+      <p
+        class="my-auto max-w-prose text-justify font-sans text-lg tracking-wide"
+      >
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed labore
+        dolore modi maxime at consectetur sint ratione ullam obcaecati, quasi
+        magnam voluptatibus placeat enim. Consequatur dolorum dolore expedita
+        sapiente adipisci. Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Architecto officia, magnam harum consequatur consectetur eaque sed
+        error alias, aliquid necessitatibus ut nesciunt laboriosam perspiciatis
+        adipisci unde officiis fugiat nostrum dolores.
+      </p>
+
+      <Picture
+        src="/svg/undraw_through_the_park.svg"
+        class="hidden max-w-md py-10 dark:rounded-3xl dark:bg-white lg:inline-flex"
+        widths={[400, 800, 1200]}
+        aspectRatio="4:3"
+        alt="TODO:"
+      />
+    </div>
+  </section>
+</Layout>
