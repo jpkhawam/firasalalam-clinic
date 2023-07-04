@@ -32,12 +32,14 @@ export default function Checkbox(props: CheckboxProps) {
             d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
           />
         </svg>
-        <span className="label-text pe-5 ps-3 font-semibold">{props.name}</span>
+        <span className="label-text pe-5 ps-3 font-semibold dark:text-white">
+          {props.name}
+        </span>
       </div>
       <input
         id={`checkbox${props.name}`}
         type="checkbox"
-        className="checkbox focus:outline-none focus:ring-0 focus:ring-offset-0"
+        className=" form-checkbox checkbox h-4 w-4 rounded-none dark:checkbox-primary focus:outline-none focus:ring-0 focus:ring-offset-0"
         name={props.name}
         aria-label={`Toggle ${props.name}`}
       />

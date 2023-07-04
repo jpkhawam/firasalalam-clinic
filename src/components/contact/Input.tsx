@@ -18,16 +18,15 @@ export default function Input(props: InputProps) {
   return (
     <div>
       <label className="label">
-        <span className="label-text">{props.labelText}</span>
+        <span className="label-text dark:text-white">{props.labelText}</span>
         {props.labelTextAlt !== undefined && (
           <span className="label-text-alt italic">
             {" " + props.labelTextAlt}
           </span>
         )}
       </label>
-      {/* // border-gray-200 */}
       <input
-        className="input-bordered input w-full rounded-lg p-3 text-sm focus:outline-none focus:ring-0 focus:ring-offset-0 dark:border-transparent"
+        className="input-bordered input w-full rounded-lg p-3 text-sm focus:outline-none focus:ring-0 focus:ring-offset-0 dark:border-transparent placeholder:dark:text-gray-300"
         type={props.type}
         id={props.id}
         name={props.name}

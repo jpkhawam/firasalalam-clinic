@@ -18,12 +18,12 @@ export default function Select(props: SelectProps) {
   return (
     <div>
       <label className="label">
-        <span className="label-text text-black  dark:text-white">
+        <span className="label-text text-black dark:text-white">
           {props.labelText}
         </span>
       </label>
       <select
-        className="select-primary select w-full max-w-6xl border-opacity-20 font-normal focus:outline-none focus:ring-0 focus:ring-offset-0"
+        className="select-primary select w-full max-w-6xl border-opacity-20 font-normal focus:outline-none focus:ring-0 focus:ring-offset-0 dark:border-opacity-0"
         name={props.name}
         value={props.value}
         defaultValue={props.defaultValue}
