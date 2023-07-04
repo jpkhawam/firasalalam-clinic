@@ -341,10 +341,12 @@ export default function ContactForm() {
 
           <div>
             <label className="label">
-              <span className="label-text">Additional notes (Optional)</span>
+              <span className="label-text dark:text-white">
+                Additional notes (Optional)
+              </span>
             </label>
             <textarea
-              className="w-full rounded-lg border-gray-200 p-3 text-sm"
+              className="w-full rounded-lg border-gray-200 p-3 text-sm dark:border-base-200 dark:bg-base-200 dark:placeholder:text-gray-300"
               placeholder="You can add additional notes that you think I should know about here."
               rows={8}
               name="message"
@@ -353,20 +355,24 @@ export default function ContactForm() {
           </div>
           <div className="mt-4">
             <button
-              className="inset-0 me-12 border-2 border-black bg-black px-8 py-3 text-sm uppercase tracking-widest text-white transition-colors duration-300 [font-weight:800;] hover:bg-white hover:text-black"
-              onClick={() => {
-                const hiddenInput = document.getElementById(
-                  "email-subject"
-                ) as HTMLInputElement;
-                const emailInput = document.getElementById(
-                  "email-input"
-                ) as HTMLInputElement;
-                hiddenInput.value += emailInput.value;
-              }}
+              className="inset-0 me-12 border-2 border-black bg-black px-8 py-3 text-sm uppercase tracking-widest text-white transition-colors duration-300 [font-weight:800;] hover:bg-white hover:text-black dark:hidden"
+              onClick={submit}
               type="submit"
               id="submit-button"
             >
               Submit
+            </button>
+
+            <button
+              onClick={submit}
+              type="submit"
+              id="submit-button"
+              className="group relative hidden rounded dark:inline-block"
+            >
+              <span className="absolute inset-0 translate-x-1 translate-y-0.5 rounded-full bg-brand transition-transform"></span>
+              <span className="relative inline-block rounded-full border-2 border-brand bg-custom-gray px-8 py-3 text-center text-sm font-bold uppercase tracking-widest text-brand group-hover:translate-x-1 group-hover:translate-y-0.5 group-active:text-opacity-75">
+                Submit
+              </span>
             </button>
           </div>
         </div>
@@ -376,6 +382,14 @@ export default function ContactForm() {
       ))}
     </>
   );
+}
+
+function submit() {
+  const hiddenInput = document.getElementById(
+    "email-subject"
+  ) as HTMLInputElement;
+  const emailInput = document.getElementById("email-input") as HTMLInputElement;
+  hiddenInput.value += emailInput.value;
 }
 
 const genderOptions = [
