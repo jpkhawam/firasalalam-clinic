@@ -12,8 +12,8 @@ module.exports = {
       },
       colors: {
         brand: "#f5bfa9",
-        cream: "#EEE",
-        "cream-content": "#002938",
+        cream: "#eee",
+        "custom-gray": "#262830",
       },
     },
   },
@@ -23,7 +23,16 @@ module.exports = {
     require("daisyui"),
   ],
   daisyui: {
-    themes: ["fantasy", "dark"],
+    themes: [
+      "fantasy",
+      {
+        dark: {
+          ...require("daisyui/src/theming/themes")["[data-theme=dark]"],
+          primary: "#f5bfa9",
+          "primary-content": "black",
+        },
+      },
+    ],
     logs: false,
     darkTheme: "dark",
   },
