@@ -328,7 +328,7 @@ export default function ContactForm() {
               icon to learn more about an item
             </h4>
             <div className="grid grid-cols-1 gap-4 sm:w-5/6 sm:grid-cols-1 md:w-3/5 lg:w-5/6">
-              {Object.entries(adhdSymptomsMap).map(([symptom, _]) => (
+              {Array.from(adhdSymptomsMap).map(([symptom, _]) => (
                 <Checkbox name={symptom} key={symptom} />
               ))}
             </div>
@@ -371,8 +371,8 @@ export default function ContactForm() {
           </div>
         </div>
       </form>
-      {Object.entries(adhdSymptomsMap).forEach(([symptom, desc]) => (
-        <Modal symptom={symptom} desc={desc} />
+      {Array.from(adhdSymptomsMap).map(([symptom, desc]) => (
+        <Modal symptom={symptom} desc={desc} key={symptom} />
       ))}
     </>
   );
@@ -388,23 +388,41 @@ const genderOptions = [
   "Prefer not to say",
 ];
 
-const adhdSymptomsMap = {
-  Inattention:
+const adhdSymptomsMap: Map<string, string> = new Map([
+  [
+    "Inattention",
     "Difficulty paying attention, staying focused, and sustaining concentration on tasks or activities, particularly those that are repetitive or less stimulating.",
-  Hyperactivity:
+  ],
+  [
+    "Hyperactivity",
     "Restlessness, excessive motor activity, and difficulty sitting still. Frequent fidgeting, tapping your feet, or a constant need for movement.",
-  Impulsivity:
+  ],
+  [
+    "Impulsivity",
     "Acting on immediate impulses without considering potential consequences. Impulsive behaviors can manifest as interrupting others, blurting out answers, or engaging in risky activities without thinking them through.",
-  "Organization and Time Management":
+  ],
+  [
+    "Organization and Time Management",
     "Challenges in organizing tasks, materials, and belongings.",
-  "Executive Functioning":
+  ],
+  [
+    "Executive Functioning",
     "Impairments in executive functions, which include skills such as problem-solving, decision-making, self-regulation, and working memory.",
-  "Emotional Regulation":
+  ],
+  [
+    "Emotional Regulation",
     "Difficulty regulating emotions and managing frustration, leading to mood swings, irritability, and a tendency to become easily overwhelmed or frustrated.",
-  "Social Interactions":
+  ],
+  [
+    "Social Interactions",
     "Challenges in social interactions, such as difficulties in taking turns, listening actively, or maintaining appropriate personal space. This can impact the development of friendships and relationships.",
-  "Impaired Memory and Forgetfulness":
+  ],
+  [
+    "Impaired Memory and Forgetfulness",
     "Struggles with short-term memory and forgetfulness, which can affect remembering instructions, completing tasks, and recalling important information.",
-  "Academic Underachievement":
+  ],
+  [
+    "Academic Underachievement",
     "Difficulties in academic settings, including poor concentration during lectures, challenges with organization and completing assignments, and lower academic performance compared to peers.",
-};
+  ],
+]);
