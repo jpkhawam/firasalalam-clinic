@@ -8,10 +8,7 @@ changeLanguage("en");
 ---
 
 <Layout title="Contact" description={t("seo.descriptions.contact")}>
-  <section
-    class="bg-gradient-to-b from-base-200 to-base-300"
-    data-theme="fantasy"
-  >
+  <section class="bg-gradient-to-b from-base-200 to-base-300">
     <div class="mx-auto max-w-screen-xl py-10 sm:px-6 lg:px-8 lg:py-16">
       <div class="grid grid-cols-1 gap-y-8 xl:grid-cols-5 xl:gap-x-16">
         <div
@@ -35,7 +32,7 @@ changeLanguage("en");
         </div>
 
         <div
-          class="bg-white p-8 text-black shadow-lg sm:rounded-lg lg:col-span-3 lg:p-12"
+          class="bg-white p-8 text-black shadow-lg dark:bg-[#262830] sm:rounded-lg lg:col-span-3 lg:p-12"
         >
           <ContactForm client:load />
         </div>
