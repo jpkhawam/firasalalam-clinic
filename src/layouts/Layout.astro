@@ -142,7 +142,7 @@ const { title, description } = Astro.props;
   <body
     class="hide-scrollbars flex h-screen flex-col justify-between selection:bg-gray-950 selection:text-white dark:text-slate-50 selection:dark:bg-brand selection:dark:text-black"
   >
-    <div class="drawer drawer-end">
+    <div class="drawer drawer-end overflow-y-scroll overscroll-y-none">
       <input id="navigation-drawer" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content">
         <NavBar />
