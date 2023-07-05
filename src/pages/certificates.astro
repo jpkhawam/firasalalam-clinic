@@ -6,9 +6,9 @@ import Layout from "../layouts/Layout.astro";
 changeLanguage("en");
 
 class Certificate {
-  // TODO: add issued by
   constructor(
     public title: string,
+    public issuedBy: string,
     public month: string,
     public year: number,
     public description: string,
@@ -17,38 +17,17 @@ class Certificate {
 }
 
 const certificates: Array<Certificate> = [];
-certificates.push(
-  new Certificate(
-    "Donec porta enim vel",
-    "Dec",
-    2021,
-    "Pellentesque feugiat ante at nisl efficitur, in mollis orci scelerisque. Interdum et malesuada fames ac ante ipsum primis in faucibus."
-  ),
-  new Certificate(
-    "Aliquam sit amet nunc ut",
-    "May",
-    2021,
-    "Morbi vulputate aliquam libero non dictum. Aliquam sit amet nunc ut diam aliquet tincidunt nec nec dui. Donec mollis turpis eget egestas sodales."
-  ),
-  new Certificate(
-    "Donec porta enim vel",
-    "Dec",
-    2020,
-    "Pellentesque feugiat ante at nisl efficitur, in mollis orci scelerisque. Interdum et malesuada fames ac ante ipsum primis in faucibus."
-  ),
-  new Certificate(
-    "Aliquam sit amet nunc ut",
-    "Jul",
-    2019,
-    "Morbi vulputate aliquam libero non dictum. Aliquam sit amet nunc ut diam aliquet tincidunt nec nec dui. Donec mollis turpis eget egestas sodales."
-  ),
-  new Certificate(
-    "Pellentesque habitant morbi ",
-    "Jan",
-    2016,
-    "Suspendisse tincidunt, arcu nec faucibus efficitur, justo velit consectetur nisl, sit amet condimentum lacus orci nec purus. Mauris quis quam suscipit, vehicula felis id, vehicula enim."
-  )
-);
+for (let i = 1; i < 5; i++) {
+  certificates.push(
+    new Certificate(
+      "Donec porta enim vel",
+      "Something somewhere",
+      "Dec",
+      2021,
+      "Pellentesque feugiat ante at nisl efficitur, in mollis orci scelerisque. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+    )
+  );
+}
 ---
 
 <Layout title="Certificates" description="">
@@ -60,10 +39,10 @@ certificates.push(
             <div
               class="mb-14 text-center before:mx-auto before:mb-5 before:block before:h-3 before:w-24 before:rounded-md before:bg-gray-300 before:dark:bg-brand sm:text-left sm:before:mx-0"
             >
-              <h3 class="text-3xl font-semibold">Morbi tempor</h3>
+              <h3 class="text-3xl font-semibold">Certificates will be here</h3>
               <span
                 class="tracki text-sm font-bold uppercase dark:text-gray-400"
-                >Vestibulum diam nunc</span
+                >Lots of certificates here</span
               >
             </div>
           </div>
@@ -76,7 +55,8 @@ certificates.push(
                   <div class="relative flex flex-col before:absolute before:left-[-35px] before:top-2 before:h-4 before:w-4 before:rounded-full before:bg-yellow-600 before:dark:bg-brand">
                     <h3 class="text-xl font-semibold">{certificate.title}</h3>
                     <time class="text-xs uppercase dark:text-gray-400">
-                      {certificate.month} {certificate.year}
+                      {certificate.issuedBy} - {certificate.month}{" "}
+                      {certificate.year}
                     </time>
                     <p class="mt-3 text-justify">{certificate.description}</p>
                     <button class="inset-0 mt-2 w-fit border-2 border-black bg-white px-2.5 py-2.5 font-sans text-sm font-semibold normal-case tracking-wide text-black transition-colors duration-300 hover:bg-black hover:text-white dark:rounded-md dark:border-brand dark:bg-base-200 dark:text-brand hover:dark:bg-brand hover:dark:text-black sm:w-1/2 md:w-1/3">
