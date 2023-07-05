@@ -23,7 +23,7 @@ export default function Select(props: SelectProps) {
         </span>
       </label>
       <select
-        className="select-primary select w-full max-w-6xl border-opacity-20 font-normal focus:border-gray-500 dark:focus:border-brand focus:outline-none focus:ring-0 focus:ring-offset-0 dark:border-opacity-0"
+        className="select-primary select w-full max-w-6xl border-opacity-20 font-normal focus:border-gray-500 focus:outline-none focus:ring-0 focus:ring-offset-0 dark:border-opacity-0 dark:focus:border-brand"
         name={props.name}
         value={props.value}
         defaultValue={props.defaultValue}
