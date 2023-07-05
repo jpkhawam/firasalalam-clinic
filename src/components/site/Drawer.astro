@@ -6,7 +6,7 @@ import LanguageSwitcher from "./LanguageSwitcher.astro";
 <div class="drawer-side">
   <label for="navigation-drawer" class="drawer-overlay"></label>
   <div
-    class="menu h-[115vh] max-h-none w-full max-w-none bg-white p-4 px-10 text-base-content dark:bg-[#1B1E26] md:w-[25rem]"
+    class="menu !h-screen !min-h-screen !z-50 w-full max-w-none bg-white p-4 px-10 text-base-content dark:bg-[#1B1E26] md:w-[25rem]"
   >
     <div>
       <button
@@ -67,26 +67,6 @@ import LanguageSwitcher from "./LanguageSwitcher.astro";
       </div>
       <div>
         <div class="cursor-pointer hover:underline">
-          <a href="/clinical-approach">{t("shared.pages.clinical-approach")}</a>
-        </div>
-        <div class="divider divider-vertical"></div>
-      </div>
-      <div>
-        <div class="cursor-pointer hover:underline">
-          <a href="/targeted-difficulties"
-            >{t("shared.pages.targeted-difficulties")}</a
-          >
-        </div>
-        <div class="divider divider-vertical"></div>
-      </div>
-      <div>
-        <div class="cursor-pointer hover:underline">
-          <a href="/skills-building">{t("shared.pages.skills-building")}</a>
-        </div>
-        <div class="divider divider-vertical"></div>
-      </div>
-      <div>
-        <div class="cursor-pointer hover:underline">
           <a href="/pricing">{t("shared.pages.pricing")}</a>
         </div>
         <div class="divider divider-vertical"></div>
@@ -96,6 +76,12 @@ import LanguageSwitcher from "./LanguageSwitcher.astro";
           <a href="/contact">{t("shared.pages.contact")}</a>
         </div>
         <div class="divider divider-vertical w-full"></div>
+      </div>
+      <div>
+        <div class="cursor-pointer hover:underline">
+          <a href="/clinical-approach">Blog</a>
+        </div>
+        <div class="divider divider-vertical"></div>
       </div>
     </div>
   </div>
