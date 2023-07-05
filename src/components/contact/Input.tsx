@@ -26,7 +26,7 @@ export default function Input(props: InputProps) {
         )}
       </label>
       <input
-        className="input-bordered input w-full rounded-lg p-3 text-sm focus:outline-none focus:ring-0 focus:ring-offset-0 focus:border-gray-500 dark:border-base-100 dark:focus:border-brand placeholder:dark:text-gray-300 invalid:required:focus:empty:input-error"
+        className="input-bordered input w-full rounded-lg p-3 text-sm invalid:required:focus:empty:input-error focus:border-gray-500 focus:outline-none focus:ring-0 focus:ring-offset-0 dark:border-base-100 placeholder:dark:text-gray-300 dark:focus:border-brand"
         type={props.type}
         id={props.id}
         name={props.name}

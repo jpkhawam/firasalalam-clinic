@@ -1,0 +1,26 @@
+---
+const { text, link } = Astro.props;
+---
+
+<span>
+  <a href={link} class="group relative inline-block dark:hidden">
+    <span
+      class="absolute inset-0 translate-x-1.5 translate-y-1.5 bg-gray-600 transition-transform group-hover:translate-x-0 group-hover:translate-y-0"
+    ></span>
+    <span
+      class="relative inline-block border-2 border-gray-600 px-8 py-3 text-sm font-bold uppercase tracking-widest text-white group-active:text-opacity-75"
+    >
+      {text}
+    </span>
+  </a>
+  <a href={link} class="group relative hidden rounded dark:inline-block">
+    <span
+      class="absolute inset-0 translate-x-1 translate-y-0.5 rounded-full bg-brand transition-transform"
+    ></span>
+    <span
+      class="relative inline-block rounded-full border-2 border-brand bg-base-200 px-8 py-3 text-center text-sm font-bold uppercase tracking-widest text-brand group-hover:translate-x-1 group-hover:translate-y-0.5 group-active:text-opacity-75"
+    >
+      {text}
+    </span>
+  </a>
+</span>

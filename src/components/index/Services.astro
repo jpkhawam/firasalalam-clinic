@@ -1,27 +1,7 @@
 ---
 import { t } from "i18next";
 import { Picture } from "@astrojs/image/components";
-
-const cards = [1, 2, 3];
-
-function getButton(link: string, text: string) {
-  return (
-    "<span>" +
-    `<a href=${link} class="group relative inline-block dark:hidden">` +
-    '<span class="absolute inset-0 translate-x-1.5 translate-y-1.5 bg-gray-600 transition-transform group-hover:translate-x-0 group-hover:translate-y-0"></span>' +
-    '<span class="relative inline-block border-2 border-gray-600 px-8 py-3 text-sm font-bold uppercase tracking-widest text-white group-active:text-opacity-75">' +
-    `${text}` +
-    "</span>" +
-    "</a>" +
-    `<a href=${link} class="group relative hidden rounded dark:inline-block">` +
-    '<span class="absolute inset-0 translate-x-1 translate-y-0.5 rounded-full bg-brand transition-transform"></span>' +
-    '<span class="relative inline-block rounded-full border-2 border-brand bg-base-200 px-8 py-3 text-center text-sm font-bold uppercase tracking-widest text-brand group-hover:translate-x-1 group-hover:translate-y-0.5 group-active:text-opacity-75">' +
-    `${text}` +
-    "</span>" +
-    "</a>" +
-    "</span>"
-  );
-}
+import Button from "./Button.astro";
 ---
 
 <div class="mt-10 justify-items-center py-10 dark:bg-[#1B1E26]">
@@ -46,7 +26,7 @@ function getButton(link: string, text: string) {
     class="mx-5 ml-auto mr-auto grid grid-cols-1 justify-items-center gap-x-[100px] gap-y-10 px-5 py-10 dark:bg-[#1B1E26] lg:grid-cols-3 lg:px-20 2xl:px-52"
   >
     {
-      cards.map((i) => (
+      [1, 2, 3].map((index) => (
         <div class="group relative">
           <div
             class=" absolute inset-0 translate-x-2 translate-y-2 bg-gray-500 opacity-25 transition-transform duration-700 group-hover:scale-105 dark:hidden"
@@ -55,11 +35,11 @@ function getButton(link: string, text: string) {
           <div class="relative">
             <div
               class="group flex h-[500px] w-full cursor-pointer flex-col overflow-hidden bg-gray-600 text-white transition-transform duration-700 hover:scale-105 dark:bg-brand lg:h-[575px] lg:w-[320px] xl:h-[575px] xl:w-[395px]"
-              onclick={`service_card_modal_${i}.showModal()`}
+              onclick={`service_card_modal_${index}.showModal()`}
             >
               <div class="mb-5">
                 <h2 class="mb-3 me-6 ms-8 mt-8 text-start font-sans font-semibold [font-size:1.65rem] [line-height:2.2rem] dark:text-black">
-                  {t(`index.Services.card-${i}.text`)}
+                  {t(`index.Services.card-${index}.text`)}
                 </h2>
                 <span class="ms-8 text-start font-sans font-semibold underline [font-size:1.00rem] dark:text-black">
                   {t("index.Services.learn-more")}
@@ -99,10 +79,9 @@ function getButton(link: string, text: string) {
     <p class="mx-auto my-5 max-w-prose text-center text-lg">
       {"Press ESC key or click outside to close ".repeat(5)}
     </p>
-    <div
-      class="mt-10 flex justify-center"
-      set:html={getButton("/TODO:", "Go to page now")}
-    />
+    <div class="mt-10 flex justify-center">
+      <Button link="/TODO:" text="Go to page now" />
+    </div>
   </form>
   <form method="dialog" class="modal-backdrop">
     <button>close</button>
@@ -128,10 +107,9 @@ function getButton(link: string, text: string) {
     <p class="mx-auto my-5 max-w-prose text-center text-lg">
       {"Press ESC key or click outside to close ".repeat(5)}
     </p>
-    <div
-      class="mt-10 flex justify-center"
-      set:html={getButton("/TODO:", "Go to page now")}
-    />
+    <div class="mt-10 flex justify-center">
+      <Button link="/TODO:" text="Go to page now" />
+    </div>
   </form>
   <form method="dialog" class="modal-backdrop">
     <button>close</button>
@@ -157,10 +135,9 @@ function getButton(link: string, text: string) {
     <p class="mx-auto my-5 max-w-prose text-center text-lg">
       {"Press ESC key or click outside to close ".repeat(5)}
     </p>
-    <div
-      class="mt-10 flex justify-center"
-      set:html={getButton("/TODO:", "Go to page now")}
-    />
+    <div class="mt-10 flex justify-center">
+      <Button link="/TODO:" text="Go to page now" />
+    </div>
   </form>
   <form method="dialog" class="modal-backdrop">
     <button>close</button>

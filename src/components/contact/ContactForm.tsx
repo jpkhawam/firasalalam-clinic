@@ -346,7 +346,7 @@ export default function ContactForm() {
               </span>
             </label>
             <textarea
-              className="w-full rounded-lg border-gray-200 p-3 text-sm dark:border-base-200 dark:bg-base-200 dark:placeholder:text-gray-300 focus:outline-none focus:ring-0 focus:ring-offset-0 focus:border-gray-500 dark:focus:border-brand"
+              className="w-full rounded-lg border-gray-200 p-3 text-sm focus:border-gray-500 focus:outline-none focus:ring-0 focus:ring-offset-0 dark:border-base-200 dark:bg-base-200 dark:placeholder:text-gray-300 dark:focus:border-brand"
               placeholder="You can add additional notes that you think I should know about here."
               rows={8}
               name="message"
