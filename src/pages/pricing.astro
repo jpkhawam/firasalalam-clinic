@@ -2,21 +2,6 @@
 import { t } from "i18next";
 import { Trans } from "astro-i18next/components";
 import Layout from "../layouts/Layout.astro";
-
-const frequentlyAskedQuestionsHTMLBlock = [];
-for (let i = 1; i <= 4; i++) {
-  frequentlyAskedQuestionsHTMLBlock.push(
-    `<div class="collapse-arrow rounded-box collapse my-2 bg-transparent">` +
-      `<input type="checkbox" class="peer w-full h-full" />` +
-      `<div class="collapse-title text-lg md:text-2xl font-medium"> ${t(
-        `pricing.question-${i}`
-      )} </div>` +
-      `<div class="collapse-content text-sm md:text-base">` +
-      `<p>${t(`pricing.answer-${i}`)}</p>` +
-      `</div>` +
-      `</div>`
-  );
-}
 ---
 
 <Layout title="Pricing" description={t("seo.descriptions.pricing")}>
@@ -168,10 +153,21 @@ for (let i = 1; i <= 4; i++) {
           {t("pricing.pricing-faq")}
         </h1>
       </div>
-      <div
-        class="mx-auto w-full text-start md:w-4/5 lg:w-3/5"
-        set:html={frequentlyAskedQuestionsHTMLBlock}
-      />
+      <div class="mx-auto w-full text-start md:w-4/5 lg:w-3/5">
+        {
+          [1, 2, 3, 4].map((index) => (
+            <div class="collapse-arrow rounded-box collapse my-2 bg-transparent">
+              <input type="checkbox" class="peer h-full w-full" />
+              <div class="collapse-title text-lg font-medium md:text-2xl">
+                {t(`pricing.question-${index}`)}{" "}
+              </div>
+              <div class="collapse-content text-sm md:text-base">
+                <p>{t(`pricing.answer-${index}`)}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
     </div>
   </section>
 </Layout>
