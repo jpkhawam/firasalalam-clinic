@@ -1,58 +1,59 @@
 ---
 import { t } from "i18next";
 
-const {individualPrice, studentPrice} = Astro.props;
+const { individualPrice, studentPrice } = Astro.props;
 ---
 
 <div
-class="mx-auto mt-4 flex w-full flex-col justify-center rounded-lg bg-base-300 px-3 py-5 text-center dark:rounded-3xl dark:bg-custom-gray sm:w-4/5 md:w-3/5 lg:w-3/5 lg:flex-row"
+  class="mx-auto mt-4 flex w-full flex-col justify-center rounded-lg bg-base-300 px-3 py-5 text-center dark:rounded-3xl dark:bg-custom-gray sm:w-4/5 md:w-3/5 lg:w-3/5 lg:flex-row"
 >
-<div class="lg:w-2/5">
-  <div class="mb-7 text-xl font-bold">{t("pricing.general-fee")}</div>
-  <div>
-    <span class="text-4xl font-black dark:text-brand">${individualPrice}</span>
-    <span class="label-text-alt text-sm font-semibold"
-      >/{t("pricing.session")}</span
-    >
-  </div>
-  <div class="mt-3">
-    <div class="[font-weight:500;]">
-      2 sessions<span class="label-text-alt text-sm"
-        >/{t("pricing.month")}</span
+  <div class="lg:w-2/5">
+    <div class="mb-7 text-xl font-bold">{t("pricing.general-fee")}</div>
+    <div>
+      <span class="text-4xl font-black dark:text-brand">${individualPrice}</span
       >
-      {"->"} ${individualPrice * 2}
+      <span class="label-text-alt text-sm font-semibold"
+        >/{t("pricing.session")}</span
+      >
     </div>
-    <div class="[font-weight:500;]">
-      4 sessions<span class="label-text-alt text-sm"
-        >/{t("pricing.month")}</span
-      >
-      {"->"} ${individualPrice * 4}
-    </div>
-  </div>
-</div>
-<div class="divider divider-horizontal mx-5 hidden lg:flex"></div>
-<div class="divider divider-vertical mx-auto w-1/2 lg:hidden"></div>
-<div class="lg:w-2/5">
-  <div class="mb-7 text-xl font-bold">{t("pricing.student-fee")}</div>
-  <div>
-    <span class="text-4xl font-black dark:text-brand">${studentPrice}</span>
-    <span class="label-text-alt text-sm font-semibold"
-      >/{t("pricing.session")}</span
-    >
-  </div>
-  <div class="mt-3">
-    <div class="[font-weight:500;]">
-      2 sessions<span class="label-text-alt text-sm"
-        >/{t("pricing.month")}</span
-      >
-      {"->"} ${studentPrice * 2}
-    </div>
-    <div class="[font-weight:500;]">
-      4 sessions<span class="label-text-alt text-sm"
-        >/{t("pricing.month")}</span
-      >
-      {"->"} ${studentPrice * 4}
+    <div class="mt-3">
+      <div class="[font-weight:500;]">
+        2 sessions<span class="label-text-alt text-sm"
+          >/{t("pricing.month")}</span
+        >
+        {"->"} ${individualPrice * 2}
+      </div>
+      <div class="[font-weight:500;]">
+        4 sessions<span class="label-text-alt text-sm"
+          >/{t("pricing.month")}</span
+        >
+        {"->"} ${individualPrice * 4}
+      </div>
     </div>
   </div>
-</div>
+  <div class="divider divider-horizontal mx-5 hidden lg:flex"></div>
+  <div class="divider divider-vertical mx-auto w-1/2 lg:hidden"></div>
+  <div class="lg:w-2/5">
+    <div class="mb-7 text-xl font-bold">{t("pricing.student-fee")}</div>
+    <div>
+      <span class="text-4xl font-black dark:text-brand">${studentPrice}</span>
+      <span class="label-text-alt text-sm font-semibold"
+        >/{t("pricing.session")}</span
+      >
+    </div>
+    <div class="mt-3">
+      <div class="[font-weight:500;]">
+        2 sessions<span class="label-text-alt text-sm"
+          >/{t("pricing.month")}</span
+        >
+        {"->"} ${studentPrice * 2}
+      </div>
+      <div class="[font-weight:500;]">
+        4 sessions<span class="label-text-alt text-sm"
+          >/{t("pricing.month")}</span
+        >
+        {"->"} ${studentPrice * 4}
+      </div>
+    </div>
+  </div>
 </div>
